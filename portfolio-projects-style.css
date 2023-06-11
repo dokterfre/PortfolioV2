@@ -229,10 +229,15 @@ footer p i {
 }
 
 
+
 @media (max-width: 920px) {
     .hero .intro {
         margin: 0 auto;
         padding: 2rem;
+    }
+    .hero .intro h1 {
+        padding-top: 4rem;
+        font-size: 40pt;
     }
 }
 hr {
