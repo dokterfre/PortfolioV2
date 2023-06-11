@@ -1,0 +1,355 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Lato, sans-serif;
+}
+body {
+    background-image: url("assets/design.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+nav{
+    display: flex;
+    height: 150px;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px 0 100px;
+    flex-wrap: wrap;
+    position: absolute;
+    z-index: 1;
+}
+
+nav a img{
+    width: 7rem;
+}
+
+@media screen and (max-width:600px) {
+    nav h1{
+        font-size: 23px;
+    }
+}
+
+nav ul{
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+}
+nav ul li{
+    margin-right: 4rem;
+}
+nav ul li a{
+    color: rgb(255, 253, 253);
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+nav a i {
+    text-decoration: none;
+    color: white;
+    font-size: 19pt;
+}
+nav a i.active,
+nav a i:hover{
+    color: #f196f8;
+    text-shadow: 2px 4px 4px rgba(179, 180, 180, 0.29);
+}
+nav ul li a.active,
+nav ul li a:hover{
+    color: #f196f8;
+    text-shadow: 2px 4px 4px rgba(179, 180, 180, 0.29);
+}
+nav .menu-btn i{
+    color: #fff;
+    font-size: 22px;
+    cursor: pointer;
+    display: none;
+}
+nav .menu-btn i:hover{
+    color: #f196f8;
+    text-shadow: 2px 4px 4px rgb(107, 107, 215);
+    transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+input[type="checkbox"]{
+    display: none;
+}
+@media (max-width: 1000px){
+    nav{
+        padding: 0 40px 0 50px;
+    }
+}
+@media (max-width: 920px) {
+    nav .menu-btn i{
+        display: block;
+        font-size: 30px;
+    }
+    nav {
+        background-color: rgba(17, 17, 17, 0.9);
+        height: 6rem;
+        position: fixed;
+        top: 0;
+    }
+    nav a img {
+        width: 5rem;
+    }
+    #click:checked ~ .menu-btn i:before{
+        content: "\f00d";
+    }
+    nav ul{
+        position: fixed;
+        top: 96px;
+        left: -100%;
+        background: rgba(17, 17, 17, 0.9);
+        height: 100vh;
+        width: 100%;
+        text-align: center;
+        display: block;
+        transition: all 0.3s ease;
+    }
+    #click:checked ~ ul{
+        left: 0;
+    }
+    nav ul li{
+        width: 100%;
+        margin: 40px 0;
+    }
+    nav ul li a{
+        width: 100%;
+        margin-left: -100%;
+        display: block;
+        font-size: 30px;
+        transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+    #click:checked ~ ul li a{
+        margin-left: 0px;
+    }
+    nav ul li a.active,
+    nav ul li a:hover{
+        background: none;
+        color: #f196f8;
+    }
+}
+.content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: -1;
+    width: 100%;
+    padding: 0 30px;
+    color: #1b1b1b;
+}
+.content div{
+    font-size: 40px;
+    font-weight: 700;
+}
+/* Header */
+
+/* Hero*/
+.hero {
+    height: 800px;
+    display: flex;
+    align-items: center;
+    text-align: right;
+}
+
+.hero .intro{
+    color: #ffe9e9;
+    width: 90%;
+}
+.hero .intro h1 {
+    font-size: 70pt;
+}
+.hero .intro h1 span {
+    color: #f5b1fc;
+}
+
+
+.inhoud {
+    width: 70%;
+}
+.inhoud .col-md-6 {
+    height: 400px;
+    border: 4px solid #0b4244;
+    background-size: cover;
+    background-position: center;
+}
+.pic1 {
+    background-image: url("assets/Maanlandingfake.png");
+}
+
+.pic2 {
+    background-image: url("assets/NYraffeShadowUpdate.png");
+}
+.pic3 {
+    background-image: url("assets/80's kopie.png");
+}
+
+.pic4 {
+    background-image: url("assets/beer.png");
+}
+.pic5 {
+    background-image: url("assets/blik.png");
+}
+
+.pic6 {
+    background-image: url("assets/darth.png");
+}
+.pic7 {
+    background-image: url("assets/logogroen.png");
+    background-color: white;
+}
+
+.pic8 {
+    background-image: url("assets/pastaux.png");
+    background-position: left;
+}
+.pic9 {
+    background-image: url("assets/zalando1.png");
+}
+
+.pic10 {
+    background-image: url("assets/zalando2.png");
+}
+.pic11 {
+    background-image: url("assets/uncommon.png");
+}
+
+.pic12 {
+    background-image: url("assets/schoen.png");
+}
+.pic13 {
+    background-image: url("assets/p1.png");
+}
+
+.pic14 {
+    background-image: url("assets/p2.png");
+}
+.pic15 {
+    background-image: url("assets/p3.png");
+}
+.pic16 {
+    background-image: url("assets/p4.png");
+}
+.pic17 {
+    background-image: url("assets/p5.png");
+}
+.pic18 {
+    background-image: url("assets/p6.png");
+}
+.pic19 {
+    background-image: url("assets/p7.png");
+}
+.pic20 {
+    background-image: url("assets/p8.png");
+}
+.pic21 {
+    background-image: url("assets/p9.png");
+}
+.pic22 {
+    background-image: url("assets/p10.png");
+}
+.pic23 {
+    background-image: url("assets/p11.png");
+}
+.pic24 {
+    background-image: url("assets/p12.png");
+}
+
+
+@media (max-width: 920px) {
+    .hero .intro {
+        margin: 0 auto;
+        padding: 2rem;
+    }
+}
+
+footer {
+    text-align: center;
+    background-color: #A49FFF;
+    color: #ffffff;
+    height: 250px;
+
+}
+
+footer a {
+    color: #ffffff;
+}
+
+#footer__mid p {
+    font-size: 40px;
+    font-family: Cormorant, serif;
+    font-weight: 700;
+}
+
+footer p {
+    font-weight: 700;
+    font-family: Cormorant, serif;
+}
+
+footer a i {
+    font-size: 50px;
+    margin: 0 10px;
+}
+
+footer p i {
+    font-size: 15pt;
+    margin-right: 10px;
+    box-shadow: #000000 ;
+}
+
+#terugnaarboven {
+    position: fixed;
+    bottom: 0;
+    right: 25px;
+    background-color: #FF8FF1;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 0.5rem 2rem;
+}
+#terugnaarboven p {
+    color: #ffffff;
+    text-decoration: none;
+}
+#terugnaarboven2 {
+    position: fixed;
+    bottom: 0;
+    right: 25px;
+    background-color: #FF8FF1;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 1rem;
+}
+#terugnaarboven2 p {
+    color: #ffffff;
+    font-size: 25pt;
+    text-decoration: none;
+    text-align: center;
+}
+#terugnaarboven2:hover, #terugnaarboven:hover {
+    box-shadow: 0 0 30px 5px rgb(234, 116, 243);
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+    cursor: pointer;
+}
+@media screen and (max-width: 882px) {
+    #terugnaarboven {
+        display: none;
+    }
+
+}
+@media screen and (min-width: 882px) {
+    #terugnaarboven2 {
+        display: none;
+    }
+}
