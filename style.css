@@ -238,58 +238,55 @@ input[type="checkbox"]{
     }
 }
 /* midsectie*/
-.inhoud {
+
+
+
+.welkom {
+    width: 70%;
+    margin: 0 auto;
+    margin-bottom: 10rem;
     margin-top: 10rem;
 }
 
-
-#welkom {
-    width: 80%;
-    margin: 0 auto;
-    margin-bottom: 10rem;
+.topic {
+    margin: 20rem auto;
+    display: flex;
+    flex-direction: column;
 }
 
-#welkom .row{
-    margin-bottom: 20rem;
+.topic div {
+    width: 50%;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
 }
-#welkom h1 {
+.pic {
+    align-items: center;
+}
+
+.topic h1 {
     font-size: 40pt;
     font-family: Palatino;
     margin-bottom: 1rem;
 }
 
-#welkom p {
+.topic p {
     font-size: 13pt;
     font-family: Lato, sans-serif;
     font-weight: 400;
     margin-bottom: 2rem;
     color: rgba(115, 115, 115, 0.73);
 }
-#welkom button {
+.topic button {
     border-radius: 15px;
-}
-#welkom .but2 {
-    padding: 1rem;
-    background-color: #3c89fa;
-    color: white;
-    border: none;
-}
-
-#welkom .but2:hover {
-    box-shadow: 0 0 15px 2px rgb(72, 187, 248);
-    -webkit-transition: all 0.2s ease-out;
-    -moz-transition: all 0.2s ease-out;
-    transition: all 0.2s ease-out;
-    cursor: pointer;
-}
-#welkom .but3 {
     padding: 1rem 2rem;
     background-color: rgba(241, 150, 248, 0.7);
     border: #f196f8 solid 2px;
     color: white;
 }
 
-#welkom .but3:hover {
+
+.topic button:hover {
     box-shadow: 0 0 15px 2px rgb(239, 190, 243);
     -webkit-transition: all 0.2s ease-out;
     -moz-transition: all 0.2s ease-out;
@@ -298,45 +295,24 @@ input[type="checkbox"]{
 
 }
 
-#welkom img {
+.topic img {
     width: 100%;
+    scale: .6; opacity: 0;
+    animation: fade-in linear forwards;
+    animation-timeline: view();
+    animation-range: cover contain;
 }
 
-.side {
-    border: yellow 2px solid;
+.bij {
+    scale: .9; opacity: 0;
+    animation: fade-in linear forwards;
+    animation-timeline: view();
+    animation-range: entry 50px;
 }
 
-#whatido {
-    width: 80%;
-    margin: 0 auto;
-    margin-bottom: 10rem;
+@keyframes fade-in {
+    to {scale: 1; opacity: 1;}
 }
-#whatido h1 {
-    font-size: 40pt;
-    font-family: Palatino;
-    margin-bottom: 1rem;
-}
-
-#whatido p {
-    font-size: 13pt;
-    font-family: Lato, sans-serif;
-    font-weight: 400;
-    margin-bottom: 2rem;
-    color: rgba(115, 115, 115, 0.73);
-}
-
-.projects {
-    width: 80%;
-    margin: 0 auto;
-}
-.projects h1 {
-    margin-bottom: 2rem;
-    font-family: Palatino, sans-serif;
-}
-
-
-
-
 
 /* footer */
 
