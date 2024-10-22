@@ -165,7 +165,7 @@ input[type="checkbox"]{
 .hero {
     padding-top: 250px;
     align-content: center;
-    background-image: url("assets/hero2.png");
+    background-image: url("assets/hero5.jpg");
     background-position: bottom;
     background-repeat: no-repeat;
     background-size: cover;
@@ -176,25 +176,21 @@ input[type="checkbox"]{
 
 
 .hero .intro{
-    color: #ffe9e9;
-    margin-left: 11rem;
+    color: #fffcfc;
+    margin: 0 auto;
     animation: fade-out linear;
     animation-timeline: view();
     animation-range: exit -200px;
-
-    filter: drop-shadow(3px 5px 9px rgba(7, 1, 7, 0.22));
-}
-.hero .intro h1 {
-    font-size: 35pt;
-}
-.hero .intro h1 span {
-    color: #f0bef6;
-    font-size: 60pt;
-
+    text-align: center;
+    filter: drop-shadow(3px 5px 9px rgba(7, 1, 7, 0.116));
+   
 }
 
-.hero .intro h2 {
-    color:  #ffe9e9;
+.hero .intro h1  {
+    color: #fffcfc;
+    font-size: 70pt;
+    line-height: 90%;
+
 }
 
 .hero h3 {
@@ -202,9 +198,8 @@ input[type="checkbox"]{
 }
 
 .hero .intro p {
-    font-size: 16pt;
-    text-align: left;
-    color: #ecebeb;
+    font-size: 12pt;
+    color: #000000;
     margin-top: 1rem;
 }
 
