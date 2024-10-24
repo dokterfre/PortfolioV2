@@ -243,120 +243,7 @@ input[type="checkbox"]{
         padding: 2rem;
     }
 }
-/* midsectie*/
 
-
-
-.welkom {
-    width: 70%;
-    margin: 0 auto;
-    margin-bottom: 10rem;
-    margin-top: 10rem;
-}
-
-.topic {
-    margin: 20rem auto;
-    display: flex;
-    flex-direction: column;
-}
-
-.topic div {
-    width: 50%;
-    margin: 2rem auto;
-    display: flex;
-    flex-direction: column;
-}
-.pic {
-    align-items: center;
-}
-
-.bij h1 {
-    font-size: 40pt;
-    font-family: Palatino;
-    margin-bottom: 1rem;
-}
-
-.bij p {
-    font-size: 13pt;
-    font-family: Lato, sans-serif;
-    font-weight: 400;
-    margin-bottom: 2rem;
-    color: rgba(115, 115, 115, 0.73);
-}
-.bij button {
-    border-radius: 15px;
-    padding: 1rem 2rem;
-    background-color: rgba(241, 150, 248, 0.7);
-    border: #f196f8 solid 2px;
-    color: white;
-}
-
-
-.bij button:hover {
-    box-shadow: 0 0 15px 2px rgb(239, 190, 243);
-    -webkit-transition: all 0.2s ease-out;
-    -moz-transition: all 0.2s ease-out;
-    transition: all 0.2s ease-out;
-    cursor: pointer;
-
-}
-
-.topic img {
-    width: 100%;
-    scale: .6; opacity: 0;
-    animation: fade-in linear forwards;
-    animation-timeline: view();
-    animation-range: cover contain;
-}
-
-.bij {
-    scale: .9; opacity: 0;
-    animation: fade-in linear forwards;
-    animation-timeline: view();
-    animation-range: entry 50px;
-    padding: 2em;
-}
-
-@keyframes fade-in {
-    to {scale: 1; opacity: 1;}
-}
-
-/* footer */
-
-footer {
-    text-align: center;
-    background-color: #f196f8;
-    color: #ffffff;
-    height: 250px;
-    margin-top: 5rem;
-
-}
-
-footer a {
-    color: #ffffff;
-}
-
-#footer__mid p {
-    font-size: 40px;
-    font-family: Cormorant, serif;
-    font-weight: 700;
-}
-
-footer p {
-    font-weight: 700;
-    font-family: Cormorant, serif;
-}
-
-footer a i {
-    font-size: 50px;
-    margin: 0 10px;
-}
-
-footer p i {
-    font-size: 15pt;
-    margin-right: 10px;
-    box-shadow: #000000 ;
-}
 
 #terugnaarboven {
     position: fixed;
@@ -405,27 +292,33 @@ footer p i {
     }
 }
 
+
+
+
+
 .bento {
-    min-height: 100vh;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: Helvetica, sans-serif;
 }
 
 .cont {
-    width: 70%;
-    height: 80vh; /* Set height to make sure it doesn't resize */
+    width: 60%;
+    height: 70vh; 
     padding: 1em;
     display: flex;
-    gap: 1em; /* Adds spacing between the grid items */
+    gap: 1em; 
 }
 
 .col-left, .col-right {
-    flex: 1; /* Ensures both columns take equal space */
+    flex: 1; 
     display: flex;
     flex-direction: column;
-    gap: 1em; /* Adds spacing between rows */
+    gap: 1em; 
 }
+
 
 .row {
     flex: 1;
@@ -433,18 +326,36 @@ footer p i {
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden; /* Prevents content overflow */
+    overflow: hidden;
     position: relative;
-    width: 100%; /* Ensures it stays within the column size */
-    height: 100%; /* Ensures the row keeps the same height */
-    background-color: rgba(54, 159, 230, 0.1); /* Optional: Background for visibility */
+    width: 100%;
+    height: 100%;
 }
 
-/* Handle the smaller rows within row3 */
+.row2 {
+    flex: 2;
+    flex-wrap: wrap;
+    align-content: space-between;
+    padding: 3em;
+    background-color: rgba(255, 87, 227, 0.1);
+}
+
+.row2 h1{
+    font-size: 65pt;
+    font-weight: 800;
+    line-height: 100%;
+    color: #1d0716;
+}
+
+.row2 p {
+    font-size: 14pt;
+}
+
 .row3 {
     display: flex;
     gap: 1em;
     flex: 1;
+    background-color: rgba(255, 255, 255, 0);
 }
 
 .row-col {
@@ -452,27 +363,70 @@ footer p i {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 2em;
+    border-radius: 1em;
     overflow: hidden;
-    height: 100%; /* Ensure row-col stays the same height */
-    background-color: rgba(159, 230, 54, 0.1); /* Optional: Background for visibility */
+    height: 100%;
+    background-color: rgba(159, 230, 54, 0.1);
 }
 
-/* Ensure images stay within the div size without stretching */
 .row img, .row-col img {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* This ensures images scale and cover the entire div */
+    object-fit: cover;
 }
 
-/* Optional: Text elements stay within bounds */
-.row p, .row-col p {
-    padding: 1rem;
-    text-align: center;
-    color: #333;
-    font-size: 14px;
+
+.top {
+    flex: 2;
+    background-image: url(assets/intr.jpg);
+    background-size: cover;
+    background-position: top;
 }
 
-.row3 {
-    background-color: rgba(255, 255, 255, 0);
+.bottom {
+    flex: 1;
+}
+
+button {
+    border-radius: 15px;
+    padding: 1rem 2rem;
+    background-color: rgba(241, 150, 248, 0.7);
+    border: #f196f8 solid 2px;
+    color: white;
+}
+
+
+button:hover {
+    box-shadow: 0 0 15px 2px rgb(239, 190, 243);
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+    cursor: pointer;
+
+}
+
+.left {
+    background-image: url(assets/pastaux.png);
+    background-size: cover;
+    background-position: top;
+    display: flex;
+    align-items: end;
+    justify-content: start;
+    padding: 1em;
+    font-size: 20pt;
+    font-weight: 800;
+    color: #f2f2f2;
+}
+
+.right {
+    background-image: url(assets/blik.png);
+    background-size: cover;
+    background-position: top;
+    display: flex;
+    align-items: end;
+    justify-content: start;
+    padding: 1em;
+    font-size: 20pt;
+    font-weight: 800;
+    color: #f2f2f2;
 }

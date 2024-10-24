@@ -368,3 +368,79 @@ img {
             font-size: 7pt;
         }
     }}
+
+
+    
+.welkom {
+    width: 70%;
+    margin: 0 auto;
+    margin-bottom: 10rem;
+    margin-top: 10rem;
+}
+
+.topic {
+    margin: 20rem auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.topic div {
+    width: 50%;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+}
+.pic {
+    align-items: center;
+}
+
+.bij h1 {
+    font-size: 40pt;
+    font-family: Palatino;
+    margin-bottom: 1rem;
+}
+
+.bij p {
+    font-size: 13pt;
+    font-family: Lato, sans-serif;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    color: rgba(115, 115, 115, 0.73);
+}
+.bij button {
+    border-radius: 15px;
+    padding: 1rem 2rem;
+    background-color: rgba(241, 150, 248, 0.7);
+    border: #f196f8 solid 2px;
+    color: white;
+}
+
+
+.bij button:hover {
+    box-shadow: 0 0 15px 2px rgb(239, 190, 243);
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+    cursor: pointer;
+
+}
+
+.topic img {
+    width: 100%;
+    scale: .6; opacity: 0;
+    animation: fade-in linear forwards;
+    animation-timeline: view();
+    animation-range: cover contain;
+}
+
+.bij {
+    scale: .9; opacity: 0;
+    animation: fade-in linear forwards;
+    animation-timeline: view();
+    animation-range: entry 50px;
+    padding: 2em;
+}
+
+@keyframes fade-in {
+    to {scale: 1; opacity: 1;}
+}
