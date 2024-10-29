@@ -5,9 +5,15 @@
     box-sizing: border-box;
     font-family: Verdana, sans-serif;
 }
-body {
-    background-color: #f4f4ff;
+
+main {
+    background-image: url("assets/maan1.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
+
 nav{
     display: flex;
     height: 150px;
@@ -225,7 +231,9 @@ input[type="checkbox"]{
     background-color: rgba(241, 150, 248, 0.63);
     border: #f196f8 solid 2px;
     color: #ffffff;
-    font-size: 10pt;
+    font-size: 11pt;
+    font-weight: 500;
+    font-family: Helvetica, sans-serif;
 }
 
 .but1:hover {
@@ -302,6 +310,7 @@ input[type="checkbox"]{
     align-items: center;
     justify-content: center;
     font-family: Helvetica, sans-serif;
+    background-color: #f4f4ff;
 }
 
 .cont {
@@ -337,7 +346,7 @@ input[type="checkbox"]{
     flex-wrap: wrap;
     align-content: space-between;
     padding: 3em;
-    background-color: rgba(255, 87, 227, 0.1);
+    background-color: rgb(255, 221, 250);
 }
 
 .row2 h1{
@@ -381,52 +390,65 @@ input[type="checkbox"]{
     background-image: url(assets/intr.jpg);
     background-size: cover;
     background-position: top;
+    display: flex;
+    justify-content: flex-end;
+    align-items: end;
+    padding: 2em;
 }
 
 .bottom {
     flex: 1;
 }
 
-button {
-    border-radius: 15px;
-    padding: 1rem 2rem;
-    background-color: rgba(241, 150, 248, 0.7);
-    border: #f196f8 solid 2px;
-    color: white;
-}
-
-
-button:hover {
-    box-shadow: 0 0 15px 2px rgb(239, 190, 243);
-    -webkit-transition: all 0.2s ease-out;
-    -moz-transition: all 0.2s ease-out;
-    transition: all 0.2s ease-out;
-    cursor: pointer;
-
-}
 
 .left {
-    background-image: url(assets/pastaux.png);
+    background-image: url(assets/uxie.jpg);
     background-size: cover;
     background-position: top;
     display: flex;
     align-items: end;
     justify-content: start;
     padding: 1em;
-    font-size: 20pt;
-    font-weight: 800;
-    color: #f2f2f2;
+
 }
 
 .right {
-    background-image: url(assets/blik.png);
+    background-image: url(assets/tinyhousebnw.jpg);
     background-size: cover;
     background-position: top;
     display: flex;
     align-items: end;
     justify-content: start;
     padding: 1em;
-    font-size: 20pt;
-    font-weight: 800;
+}
+
+.row3 p{
+    filter: drop-shadow(3px 5px 9px rgba(7, 1, 7, 0.493));
+    font-size: 21pt;
+    font-weight: 600;
     color: #f2f2f2;
+
+}
+
+.but2 {
+    background-color: rgba(242, 150, 248, 0);
+    border: #ffffff solid 2px;
+    color: #ffffff;
+    margin-right: 1em;
+}
+
+
+.but2:hover {
+    box-shadow: 0 0 30px 5px rgba(255, 255, 255, 0.35);
+    background-color: rgba(255, 255, 255, 0.94);
+    color: #000000;
+}
+
+.expertise {
+    height: 150vh;
+}
+
+.output {
+    height: 100vh;
+    background-color: #f4f4ff;
 }
