@@ -234,13 +234,14 @@ input[type="checkbox"]{
     font-size: 11pt;
     font-weight: 500;
     font-family: Helvetica, sans-serif;
+    transition: all 0.5s ease;
 }
 
 .but1:hover {
     box-shadow: 0 0 30px 5px rgba(241, 150, 248, 0.35);
-    -webkit-transition: all 0.2s ease-out;
-    -moz-transition: all 0.2s ease-out;
-    transition: all 0.2s ease-out;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    transition: all 0.5s ease;
     background-color: rgba(241, 150, 248, 0.94);
     cursor: pointer;
 }
@@ -433,6 +434,7 @@ input[type="checkbox"]{
 .but2 {
     background-color: rgba(242, 150, 248, 0);
     border: #ffffff solid 2px;
+    transition: all 0.5s ease;
     color: #ffffff;
     margin-right: 1em;
 }
@@ -441,14 +443,116 @@ input[type="checkbox"]{
 .but2:hover {
     box-shadow: 0 0 30px 5px rgba(255, 255, 255, 0.35);
     background-color: rgba(255, 255, 255, 0.94);
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    transition: all 0.5s ease;
     color: #000000;
 }
 
 .expertise {
-    height: 150vh;
+    height: 120vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .output {
-    height: 100vh;
-    background-color: #f4f4ff;
+    height: 40%;
+    width: 30%;
+    display: flex;
+    flex-wrap: wrap;
+    cursor: help;
+}
+
+.output1 {
+    border-right: solid white 3px;
+    border-bottom: solid white 3px;
+    width: 50%;
+    height: 50%;
+}
+
+.output2 {
+    border-bottom: solid white 3px;
+    border-left: solid white 3px;
+    width: 50%;
+    height: 50%;
+}
+
+.output3 {
+    border-top: solid white 3px;
+    border-right: solid white 3px;
+    width: 50%;
+    height: 50%;
+}
+
+.output4 {
+    border-left: solid white 3px;
+    border-top: solid white 3px;
+    width: 50%;
+    height: 50%;
+}
+.info {
+    display: flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 30pt;
+    font-weight: 800;
+    position: relative;
+    transition: color 0.5s ease;
+}
+.info:hover {
+    color: #ff67e6;
+    transition: color 0.5s ease;
+
+    
+}
+
+.tooltiptext {
+    opacity: 0;
+    color: #fff;
+    filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.164));
+}
+
+.output1 .tooltiptext , .output2 .tooltiptext {
+    /* background-color: rgba(0, 0, 0, 0.527);*/
+    text-align: center;
+    padding: 1rem;
+    border-radius: 6px;
+    font-size: 11pt;
+    font-weight: 100;
+    position: absolute;
+    bottom: 70%; 
+    transform: translateY(50%);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    z-index: 1;
+    margin: 1rem;
+}
+
+.output1:hover .tooltiptext, .output2:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0); 
+}
+
+
+.output3 .tooltiptext, .output4 .tooltiptext {
+    text-align: center;
+    padding: 1rem;
+    border-radius: 6px;
+    font-size: 11pt;
+    font-weight: 100;
+    position: absolute;
+    top: 70%; 
+    transform: translateY(-50%);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    z-index: 1;
+    margin-top: 0.5rem;
+    margin: 1rem;
+}
+
+.output3:hover .tooltiptext, .output4:hover .tooltiptext {
+    opacity: 1;
+    transform: translateY(0);
 }
