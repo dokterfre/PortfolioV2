@@ -5,6 +5,9 @@
     box-sizing: border-box;
     font-family: Verdana, sans-serif;
 }
+html {
+    cursor: url(assets/muisje.png), auto !important;
+}
 
 main {
     background-image: url("assets/maan1.jpg");
@@ -12,6 +15,20 @@ main {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+}
+.rotate {
+    display: inline-block;
+    -webkit-animation: rotate 4s linear infinite;
+    animation: rotate 7s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 nav{
@@ -28,6 +45,10 @@ nav{
 
 nav a img{
     width: 7rem;
+}
+
+nav a img {
+    cursor: url(assets/finga.png), auto !important;
 }
 
 @media screen and (max-width:600px) {
@@ -58,11 +79,11 @@ nav ul li a.active,
 nav ul li a:hover{
     color: #f196f8;
     text-shadow: 2px 4px 4px rgb(107, 107, 215);
+    cursor: url(assets/finga.png), auto !important;
 }
 nav .menu-btn i{
     color: #fff;
     font-size: 22px;
-    cursor: pointer;
     display: none;
 }
 nav .menu-btn i:hover{
@@ -243,7 +264,7 @@ input[type="checkbox"]{
     -moz-transition: all 0.5s ease;
     transition: all 0.5s ease;
     background-color: rgba(241, 150, 248, 0.94);
-    cursor: pointer;
+    cursor: url(assets/finga.png), auto !important;
 }
 
 @media (max-width: 920px) {
@@ -254,7 +275,7 @@ input[type="checkbox"]{
 }
 
 
-#terugnaarboven {
+.terugnaarboven {
     position: fixed;
     bottom: 0;
     right: 25px;
@@ -263,11 +284,11 @@ input[type="checkbox"]{
     border-top-right-radius: 10px;
     padding: 0.5rem 2rem;
 }
-#terugnaarboven p {
+.terugnaarboven p {
     color: #ffffff;
     text-decoration: none;
 }
-#terugnaarboven2 {
+.terugnaarboven2 {
     position: fixed;
     bottom: 0;
     right: 25px;
@@ -276,27 +297,31 @@ input[type="checkbox"]{
     border-top-right-radius: 10px;
     padding: 1rem;
 }
-#terugnaarboven2 p {
+.terugnaarboven2 p {
     color: #ffffff;
     font-size: 25pt;
     text-decoration: none;
     text-align: center;
 }
-#terugnaarboven2:hover, #terugnaarboven:hover {
+.terugnaarboven2:hover, .terugnaarboven:hover {
     box-shadow: 0 0 30px 5px rgb(234, 116, 243);
     -webkit-transition: all 0.2s ease-out;
     -moz-transition: all 0.2s ease-out;
     transition: all 0.2s ease-out;
-    cursor: pointer;
 }
+.terugnaarboven2 p:hover, .terugnaarboven p:hover {
+    cursor: url(assets/finga.png), auto !important;
+}
+
+
 @media screen and (max-width: 882px) {
-    #terugnaarboven {
+    .terugnaarboven {
         display: none;
     }
 
 }
 @media screen and (min-width: 882px) {
-    #terugnaarboven2 {
+    .terugnaarboven2 {
         display: none;
     }
 }
@@ -313,6 +338,8 @@ input[type="checkbox"]{
     font-family: Helvetica, sans-serif;
     background-color: #f4f4ff;
 }
+
+
 
 .cont {
     width: 60%;
@@ -431,6 +458,15 @@ input[type="checkbox"]{
 
 }
 
+.row2, .right, .left, .top {
+    transition: transform 0.3s ease;
+}
+
+.row2:hover, .right:hover, .left:hover, .top:hover {
+    transform: scale(1.02);
+    transition: transform 0.3s ease; 
+}
+
 .but2 {
     background-color: rgba(242, 150, 248, 0);
     border: #ffffff solid 2px;
@@ -447,6 +483,7 @@ input[type="checkbox"]{
     -moz-transition: all 0.5s ease;
     transition: all 0.5s ease;
     color: #000000;
+    cursor: url(assets/finga.png), auto !important;
 }
 
 .expertise {
@@ -461,7 +498,7 @@ input[type="checkbox"]{
     width: 30%;
     display: flex;
     flex-wrap: wrap;
-    cursor: help;
+    
 }
 
 .output1 {
@@ -555,4 +592,16 @@ input[type="checkbox"]{
 .output3:hover .tooltiptext, .output4:hover .tooltiptext {
     opacity: 1;
     transform: translateY(0);
+}
+
+
+.bij {
+    scale: .9; opacity: 0;
+    animation: fade-in linear forwards;
+    animation-timeline: view();
+    animation-range: entry 50px;
+}
+
+@keyframes fade-in {
+    to {scale: 1; opacity: 1;}
 }
