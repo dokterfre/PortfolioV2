@@ -1,8 +1,34 @@
-* {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Lato, sans-serif;
+    font-family: Verdana, sans-serif;
+}
+html {
+    cursor: url(assets/muisje.png), auto !important;
+}
+
+main {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.rotate {
+    display: inline-block;
+    -webkit-animation: rotate 4s linear infinite;
+    animation: rotate 7s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 nav{
@@ -21,6 +47,10 @@ nav a img{
     width: 7rem;
 }
 
+nav a img {
+    cursor: url(assets/finga.png), auto !important;
+}
+
 @media screen and (max-width:600px) {
     nav h1{
         font-size: 23px;
@@ -36,9 +66,9 @@ nav ul li{
     margin-right: 4rem;
 }
 nav ul li a{
-    color: #5d5d5d;
+    color: #383838;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 25px;
     font-weight: 500;
     padding: 8px 15px;
     border-radius: 5px;
@@ -48,12 +78,11 @@ nav ul li a{
 nav ul li a.active,
 nav ul li a:hover{
     color: #f196f8;
-    text-shadow: 2px 4px 4px rgba(217, 217, 250, 0.71);
+    cursor: url(assets/finga.png), auto !important;
 }
 nav .menu-btn i{
     color: #fff;
     font-size: 22px;
-    cursor: pointer;
     display: none;
 }
 nav .menu-btn i:hover{
@@ -119,6 +148,26 @@ input[type="checkbox"]{
         background: none;
         color: #f196f8;
     }
+}
+.scroll-watcher {
+    height: 10px;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    background-color: #f196f8;
+    width: 100%;
+    scale: 0 1;
+    transform-origin: left;
+
+    animation: scroll-watcher linear;
+    animation-timeline: scroll();
+
+    filter: drop-shadow(3px 5px 9px rgba(185, 12, 187, 0.43));
+}
+
+@keyframes scroll-watcher {
+    to { scale: 1 1;}
+
 }
 .content{
     position: absolute;
@@ -240,26 +289,7 @@ main article h2 {
     margin: 20px auto;
 }
 
-main article button {
-    color: #ffffff;
-    background-color: #f196f8;
-    border: none;
-    border-radius: 37px;
-    padding: 1.5rem 6rem;
-    font-family: Lato, sans-serif;
-    font-weight: 300;
-    font-size: 12pt;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2)
-}
-main article button:hover {
-    cursor: pointer;
-    background-color: #A1FFA1;
-    box-shadow: 0 0 30px 5px rgba(88, 246, 88, 0.37);
-    -webkit-transition: all 0.2s ease-out;
-    -moz-transition: all 0.2s ease-out;
-    transition: all 0.2s ease-out;
 
-}
 
 img {
     width: 100%;
@@ -376,6 +406,7 @@ img {
     margin: 0 auto;
     margin-bottom: 10rem;
     margin-top: 10rem;
+    height: 150vh;
 }
 
 .topic {
@@ -401,11 +432,11 @@ img {
 }
 
 .bij p {
-    font-size: 13pt;
+    font-size: 12pt;
     font-family: Lato, sans-serif;
     font-weight: 400;
-    margin-bottom: 2rem;
     color: rgba(115, 115, 115, 0.73);
+    line-height: 150%;
 }
 .bij button {
     border-radius: 15px;
@@ -425,12 +456,13 @@ img {
 
 }
 
-.topic img {
+.pic img {
     width: 100%;
     scale: .6; opacity: 0;
     animation: fade-in linear forwards;
     animation-timeline: view();
     animation-range: cover contain;
+    border-radius: 2rem;
 }
 
 .bij {
@@ -438,9 +470,99 @@ img {
     animation: fade-in linear forwards;
     animation-timeline: view();
     animation-range: entry 50px;
-    padding: 2em;
+    
 }
 
 @keyframes fade-in {
     to {scale: 1; opacity: 1;}
 }
+
+.but1 {
+    padding: 1rem 3rem;
+    margin-top: 2rem;
+    border-radius: 18px;
+    background-color: rgba(241, 150, 248, 0.63);
+    border: #f196f8 solid 2px;
+    color: #ffffff;
+    font-size: 11pt;
+    font-weight: 00;
+    font-family: Helvetica, sans-serif;
+    transition: all 0.5s ease;
+}
+
+.but1:hover {
+    box-shadow: 0 0 30px 5px rgba(241, 150, 248, 0.35);
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    color: #520e43;
+    background-color: rgba(241, 150, 248, 0.94);
+    cursor: url(assets/finga.png), auto !important;
+}
+
+
+@keyframes slide {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  
+  .logos {
+    overflow: hidden;
+    padding: 60px 0;
+    width: 100%;
+    background: white;
+    white-space: nowrap;
+    position: relative;
+    margin: 0 auto;
+    scale: .9; opacity: 0;
+    animation: fade-in linear forwards;
+    animation-timeline: view();
+    animation-range: entry 50px;
+  }
+  
+  .logos:before,
+  .logos:after {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    content: "";
+    z-index: 2;
+  }
+  
+  .logos:before {
+    left: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
+  }
+  
+  .logos:after {
+    right: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+  }
+  
+  
+  .logos-slide {
+    display: inline-block;
+    animation: 30s slide infinite linear;
+  }
+  
+  .logos-slide img {
+    height: 70px;
+    width: auto;
+    margin: 0 1em;
+    scale: .6; opacity: 0;
+    animation: fade-in linear forwards;
+    animation-timeline: view();
+    animation-range: cover contain;
+  }
+
+  .skills {
+    width: 50%;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+  }
