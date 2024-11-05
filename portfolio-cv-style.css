@@ -406,7 +406,9 @@ img {
     margin: 0 auto;
     margin-bottom: 10rem;
     margin-top: 10rem;
-    height: 150vh;
+    height: 80vh;
+    align-items: center;
+    display: flex;
 }
 
 .topic {
@@ -462,7 +464,7 @@ img {
     animation: fade-in linear forwards;
     animation-timeline: view();
     animation-range: cover contain;
-    border-radius: 2rem;
+    border-radius: 1.5rem;
 }
 
 .bij {
