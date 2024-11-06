@@ -169,7 +169,10 @@ input[type="checkbox"] {
     width: 100%;
     scale: 0 1;
     transform-origin: left;
+
     animation: scroll-watcher linear;
+    animation-timeline: scroll();
+
     filter: drop-shadow(3px 5px 9px rgba(185, 12, 187, 0.43));
 }
 
