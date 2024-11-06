@@ -284,9 +284,11 @@ main article h1 {
 
 main article h2 {
     font-family: Palatino, sans-serif;
-    font-size: 20pt;
-    color: #A49FFF;
+    font-size: 15pt;
+    color: #c4c4c4;
     margin: 20px auto;
+    font-weight: 100
+;
 }
 
 

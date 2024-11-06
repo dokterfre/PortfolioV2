@@ -605,3 +605,24 @@ input[type="checkbox"]{
 @keyframes fade-in {
     to {scale: 1; opacity: 1;}
 }
+
+.works {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em; /* Space between the image boxes */
+    width: 90%;
+    margin: 0 auto;
+  }
+  
+  .image-box {
+    flex: 1 1 400px; /* Minimum width of 200px, grow to fill the space */
+    height: 400px; /* Set a fixed height */
+    background-size: cover; /* Make image cover the div */
+    background-position: center; /* Center the image */
+    border-radius: 8px; /* Optional: rounded corners */
+    transition: transform 0.3s ease; /* Animation for hover effect */
+  }
+  
+  .image-box:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+  }
