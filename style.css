@@ -607,22 +607,62 @@ input[type="checkbox"]{
 }
 
 .works {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2em; /* Space between the image boxes */
-    width: 90%;
-    margin: 0 auto;
-  }
-  
-  .image-box {
-    flex: 1 1 400px; /* Minimum width of 200px, grow to fill the space */
-    height: 400px; /* Set a fixed height */
-    background-size: cover; /* Make image cover the div */
-    background-position: center; /* Center the image */
-    border-radius: 8px; /* Optional: rounded corners */
-    transition: transform 0.3s ease; /* Animation for hover effect */
-  }
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em; /* Space between the image boxes */
+  width: 90%;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.image-box {
+  flex: 1 1 400px; /* Keep the width at 400px */
+  max-width: 400px; /* Prevent flex items from growing larger */
+  height: 400px; /* Fixed height for each box */
+  background-size: cover; 
+  background-position: center; 
+  border-radius: 1em; 
+  transition: transform 0.3s ease; 
+  cursor: pointer;
+}
   
   .image-box:hover {
     transform: scale(1.05); /* Slight zoom on hover */
+  }
+
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+
+  }
+  
+  .modal-content {
+    margin: 0 auto;
+    display: block;
+    max-width: 80%;
+    max-height: 80%;
+  }
+  
+  .close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #ff82f9;
+    text-decoration: none;
+    cursor: pointer;
   }
