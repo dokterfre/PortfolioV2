@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Verdana, sans-serif;
 }
+
 html {
     cursor: url(assets/muisje.png), auto !important;
 }
@@ -16,9 +18,9 @@ main {
     background-size: cover;
     background-attachment: fixed;
 }
+
 .rotate {
     display: inline-block;
-    -webkit-animation: rotate 4s linear infinite;
     animation: rotate 7s linear infinite;
 }
 
@@ -31,7 +33,7 @@ main {
     }
 }
 
-nav{
+nav {
     display: flex;
     height: 150px;
     width: 100%;
@@ -43,29 +45,22 @@ nav{
     top: 0;
 }
 
-nav a img{
-    width: 7rem;
-}
-
 nav a img {
+    width: 7rem;
     cursor: url(assets/finga.png), auto !important;
 }
 
-@media screen and (max-width:600px) {
-    nav h1{
-        font-size: 23px;
-    }
-}
-
-nav ul{
+nav ul {
     display: flex;
     flex-wrap: wrap;
     list-style: none;
 }
-nav ul li{
+
+nav ul li {
     margin-right: 4rem;
 }
-nav ul li a{
+
+nav ul li a {
     color: #f2f2f2;
     text-decoration: none;
     font-size: 25px;
@@ -75,32 +70,44 @@ nav ul li a{
     letter-spacing: 1px;
     transition: all 0.3s ease;
 }
+
 nav ul li a.active,
-nav ul li a:hover{
+nav ul li a:hover {
     color: #f196f8;
     text-shadow: 2px 4px 4px rgb(107, 107, 215);
     cursor: url(assets/finga.png), auto !important;
 }
-nav .menu-btn i{
+
+nav .menu-btn i {
     color: #fff;
     font-size: 22px;
     display: none;
 }
-nav .menu-btn i:hover{
+
+nav .menu-btn i:hover {
     color: #f196f8;
     text-shadow: 2px 4px 4px rgb(107, 107, 215);
     transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
-input[type="checkbox"]{
+
+input[type="checkbox"] {
     display: none;
 }
-@media (max-width: 1000px){
-    nav{
+
+@media screen and (max-width: 600px) {
+    nav h1 {
+        font-size: 23px;
+    }
+}
+
+@media (max-width: 1000px) {
+    nav {
         padding: 0 40px 0 50px;
     }
 }
+
 @media (max-width: 920px) {
-    nav .menu-btn i{
+    nav .menu-btn i {
         display: block;
         font-size: 30px;
     }
@@ -113,10 +120,10 @@ input[type="checkbox"]{
     nav a img {
         width: 5rem;
     }
-    #click:checked ~ .menu-btn i:before{
+    #click:checked ~ .menu-btn i:before {
         content: "\f00d";
     }
-    nav ul{
+    nav ul {
         position: fixed;
         top: 96px;
         left: -100%;
@@ -127,29 +134,30 @@ input[type="checkbox"]{
         display: block;
         transition: all 0.3s ease;
     }
-    #click:checked ~ ul{
+    #click:checked ~ ul {
         left: 0;
     }
-    nav ul li{
+    nav ul li {
         width: 100%;
         margin: 40px 0;
     }
-    nav ul li a{
+    nav ul li a {
         width: 100%;
         margin-left: -100%;
         display: block;
         font-size: 30px;
         transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     }
-    #click:checked ~ ul li a{
+    #click:checked ~ ul li a {
         margin-left: 0px;
     }
     nav ul li a.active,
-    nav ul li a:hover{
+    nav ul li a:hover {
         background: none;
         color: #f196f8;
     }
 }
+
 .scroll-watcher {
     height: 10px;
     position: fixed;
@@ -159,58 +167,32 @@ input[type="checkbox"]{
     width: 100%;
     scale: 0 1;
     transform-origin: left;
-
     animation: scroll-watcher linear;
-    animation-timeline: scroll();
-
     filter: drop-shadow(3px 5px 9px rgba(185, 12, 187, 0.43));
 }
 
 @keyframes scroll-watcher {
-    to { scale: 1 1;}
-
+    to { scale: 1 1; }
 }
 
-.content{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    z-index: -1;
-    width: 100%;
-    padding: 0 30px;
-    color: #1b1b1b;
-}
-.content div{
-    font-size: 40px;
-    font-weight: 700;
-}
-/* Header */
-
-/* Hero*/
 .hero {
     padding-top: 250px;
+    padding-bottom: 270px;
     align-content: center;
     background-image: url("assets/hero5.jpg");
     background-position: bottom;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    padding-bottom: 270px;
     height: 100vh;
 }
 
-
-.hero .intro{
+.hero .intro {
     color: #fffcfc;
     margin: 0 auto;
     animation: fade-out linear;
-    animation-timeline: view();
-    animation-range: exit -200px;
     text-align: center;
     filter: drop-shadow(3px 5px 9px rgba(7, 1, 7, 0.116));
-   
 }
 
 .hero h2 {
@@ -222,11 +204,10 @@ input[type="checkbox"]{
     font-size: 15pt;
 }
 
-.hero .intro h1  {
+.hero .intro h1 {
     color: #fffcfc;
     font-size: 70pt;
     line-height: 90%;
-
 }
 
 .hero h3 {
@@ -242,7 +223,7 @@ input[type="checkbox"]{
 }
 
 @keyframes fade-out {
-    to {opacity: 0}
+    to { opacity: 0; }
 }
 
 .but1 {
@@ -254,26 +235,15 @@ input[type="checkbox"]{
     color: #ffffff;
     font-size: 11pt;
     font-weight: 500;
-    font-family: Helvetica, sans-serif;
     transition: all 0.5s ease;
 }
 
 .but1:hover {
     box-shadow: 0 0 30px 5px rgba(241, 150, 248, 0.35);
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    transition: all 0.5s ease;
     background-color: rgba(241, 150, 248, 0.94);
+    transition: all 0.5s ease;
     cursor: url(assets/finga.png), auto !important;
 }
-
-@media (max-width: 920px) {
-    .hero .intro {
-        margin: 0 auto;
-        padding: 2rem;
-    }
-}
-
 
 .terugnaarboven {
     position: fixed;
@@ -284,10 +254,12 @@ input[type="checkbox"]{
     border-top-right-radius: 10px;
     padding: 0.5rem 2rem;
 }
+
 .terugnaarboven p {
     color: #ffffff;
     text-decoration: none;
 }
+
 .terugnaarboven2 {
     position: fixed;
     bottom: 0;
@@ -297,38 +269,36 @@ input[type="checkbox"]{
     border-top-right-radius: 10px;
     padding: 1rem;
 }
+
 .terugnaarboven2 p {
     color: #ffffff;
     font-size: 25pt;
     text-decoration: none;
     text-align: center;
 }
-.terugnaarboven2:hover, .terugnaarboven:hover {
+
+.terugnaarboven2:hover,
+.terugnaarboven:hover {
     box-shadow: 0 0 30px 5px rgb(234, 116, 243);
-    -webkit-transition: all 0.2s ease-out;
-    -moz-transition: all 0.2s ease-out;
     transition: all 0.2s ease-out;
 }
-.terugnaarboven2 p:hover, .terugnaarboven p:hover {
+
+.terugnaarboven2 p:hover,
+.terugnaarboven p:hover {
     cursor: url(assets/finga.png), auto !important;
 }
-
 
 @media screen and (max-width: 882px) {
     .terugnaarboven {
         display: none;
     }
-
 }
+
 @media screen and (min-width: 882px) {
     .terugnaarboven2 {
         display: none;
     }
 }
-
-
-
-
 
 .bento {
     height: 100vh;
@@ -339,23 +309,21 @@ input[type="checkbox"]{
     background-color: #f4f4ff;
 }
 
-
-
 .cont {
     width: 60%;
-    height: 70vh; 
+    height: 70vh;
     padding: 1em;
     display: flex;
-    gap: 1em; 
+    gap: 1em;
 }
 
-.col-left, .col-right {
-    flex: 1; 
+.col-left,
+.col-right {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 1em; 
+    gap: 1em;
 }
-
 
 .row {
     flex: 1;
@@ -367,6 +335,7 @@ input[type="checkbox"]{
     position: relative;
     width: 100%;
     height: 100%;
+    transition: transform 0.3s ease;
 }
 
 .row2 {
@@ -377,7 +346,7 @@ input[type="checkbox"]{
     background-color: rgb(255, 221, 250);
 }
 
-.row2 h1{
+.row2 h1 {
     font-size: 65pt;
     font-weight: 800;
     line-height: 100%;
@@ -406,12 +375,12 @@ input[type="checkbox"]{
     background-color: rgba(159, 230, 54, 0.1);
 }
 
-.row img, .row-col img {
+.row img,
+.row-col img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-
 
 .top {
     flex: 2;
@@ -422,12 +391,8 @@ input[type="checkbox"]{
     justify-content: flex-end;
     align-items: end;
     padding: 2em;
+    transition: transform 0.3s ease;
 }
-
-.bottom {
-    flex: 1;
-}
-
 
 .left {
     background-image: url(assets/uxie.jpg);
@@ -437,7 +402,7 @@ input[type="checkbox"]{
     align-items: end;
     justify-content: start;
     padding: 1em;
-
+    transition: transform 0.3s ease;
 }
 
 .right {
@@ -448,23 +413,21 @@ input[type="checkbox"]{
     align-items: end;
     justify-content: start;
     padding: 1em;
+    transition: transform 0.3s ease;
 }
 
-.row3 p{
+.row3 p {
     filter: drop-shadow(3px 5px 9px rgba(7, 1, 7, 0.493));
     font-size: 21pt;
     font-weight: 600;
     color: #f2f2f2;
-
 }
 
-.row2, .right, .left, .top {
-    transition: transform 0.3s ease;
-}
-
-.row2:hover, .right:hover, .left:hover, .top:hover {
+.row2:hover,
+.right:hover,
+.left:hover,
+.top:hover {
     transform: scale(1.02);
-    transition: transform 0.3s ease; 
 }
 
 .but2 {
@@ -475,12 +438,9 @@ input[type="checkbox"]{
     margin-right: 1em;
 }
 
-
 .but2:hover {
     box-shadow: 0 0 30px 5px rgba(255, 255, 255, 0.35);
     background-color: rgba(255, 255, 255, 0.94);
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
     transition: all 0.5s ease;
     color: #000000;
     cursor: url(assets/finga.png), auto !important;
@@ -498,7 +458,6 @@ input[type="checkbox"]{
     width: 30%;
     display: flex;
     flex-wrap: wrap;
-    
 }
 
 .output1 {
@@ -528,8 +487,8 @@ input[type="checkbox"]{
     width: 50%;
     height: 50%;
 }
+
 .info {
-    display: flex;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -539,11 +498,9 @@ input[type="checkbox"]{
     position: relative;
     transition: color 0.5s ease;
 }
+
 .info:hover {
     color: #ff67e6;
-    transition: color 0.5s ease;
-
-    
 }
 
 .tooltiptext {
@@ -552,85 +509,87 @@ input[type="checkbox"]{
     filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.164));
 }
 
-.output1 .tooltiptext , .output2 .tooltiptext {
-    /* background-color: rgba(0, 0, 0, 0.527);*/
+.output1 .tooltiptext,
+.output2 .tooltiptext {
     text-align: center;
     padding: 1rem;
     border-radius: 6px;
     font-size: 11pt;
     font-weight: 100;
     position: absolute;
-    bottom: 70%; 
+    bottom: 70%;
     transform: translateY(50%);
     transition: opacity 0.5s ease, transform 0.5s ease;
     z-index: 1;
     margin: 1rem;
 }
 
-.output1:hover .tooltiptext, .output2:hover .tooltiptext {
+.output1:hover .tooltiptext,
+.output2:hover .tooltiptext {
     visibility: visible;
     opacity: 1;
-    transform: translateY(0); 
+    transform: translateY(0);
 }
 
-
-.output3 .tooltiptext, .output4 .tooltiptext {
+.output3 .tooltiptext,
+.output4 .tooltiptext {
     text-align: center;
     padding: 1rem;
     border-radius: 6px;
     font-size: 11pt;
     font-weight: 100;
     position: absolute;
-    top: 70%; 
+    top: 70%;
     transform: translateY(-50%);
     transition: opacity 0.5s ease, transform 0.5s ease;
     z-index: 1;
-    margin-top: 0.5rem;
-    margin: 1rem;
+    margin: 0.5rem 1rem 0 0;
 }
 
-.output3:hover .tooltiptext, .output4:hover .tooltiptext {
+.output3:hover .tooltiptext,
+.output4:hover .tooltiptext {
     opacity: 1;
     transform: translateY(0);
 }
 
-
 .bij {
-    scale: .9; opacity: 0;
+    scale: 0.9;
+    opacity: 0;
     animation: fade-in linear forwards;
-    animation-timeline: view();
-    animation-range: entry 50px;
 }
 
 @keyframes fade-in {
-    to {scale: 1; opacity: 1;}
+    to {
+        scale: 1;
+        opacity: 1;
+    }
 }
 
 .works {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2em; /* Space between the image boxes */
-  width: 90%;
-  margin: 0 auto;
-  justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    width: 90%;
+    margin: 0 auto;
+    justify-content: center;
 }
 
 .image-box {
-  flex: 1 1 400px; /* Keep the width at 400px */
-  max-width: 400px; /* Prevent flex items from growing larger */
-  height: 400px; /* Fixed height for each box */
-  background-size: cover; 
-  background-position: center; 
-  border-radius: 1em; 
-  transition: transform 0.3s ease; 
-  cursor: pointer;
+    flex: 1 1 400px;
+    max-width: 400px;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 1em;
+    transition: transform 0.3s ease;
+    cursor: pointer;
 }
-  
-  .image-box:hover {
-    transform: scale(1.05); /* Slight zoom on hover */
-  }
 
-  .modal {
+.image-box:hover {
+    transform: scale(1.05);
+}
+
+.modal {
     display: none;
     position: fixed;
     z-index: 1000;
@@ -640,17 +599,18 @@ input[type="checkbox"]{
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-  }
-  
-  .modal-content {
-    margin: 0 auto;
-    display: block;
+.modal-content {
     max-width: 80%;
     max-height: 80%;
-  }
-  
-  .close {
+    border-radius: 8px;
+}
+
+.close {
     position: absolute;
     top: 20px;
     right: 35px;
@@ -658,11 +618,11 @@ input[type="checkbox"]{
     font-size: 40px;
     font-weight: bold;
     cursor: pointer;
-  }
-  
-  .close:hover,
-  .close:focus {
+}
+
+.close:hover,
+.close:focus {
     color: #ff82f9;
     text-decoration: none;
     cursor: pointer;
-  }
+}

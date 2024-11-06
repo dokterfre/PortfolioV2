@@ -5,8 +5,13 @@
     box-sizing: border-box;
     font-family: Verdana, sans-serif;
 }
+
 html {
     cursor: url(assets/muisje.png), auto !important;
+}
+
+body {
+    background-color: #fff8f8;
 }
 
 main {
@@ -108,6 +113,7 @@ input[type="checkbox"]{
         height: 6rem;
         position: fixed;
         top: 0;
+        z-index: 500;
     }
     nav a img {
         width: 5rem;
@@ -120,7 +126,7 @@ input[type="checkbox"]{
         top: 96px;
         left: -100%;
         background: rgba(17, 17, 17, 0.9);
-        height: 100vh;
+        height: 50vh;
         width: 100%;
         text-align: center;
         display: block;
@@ -138,6 +144,7 @@ input[type="checkbox"]{
         margin-left: -100%;
         display: block;
         font-size: 30px;
+        color: #fff;
         transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     }
     #click:checked ~ ul li a{
@@ -184,40 +191,7 @@ input[type="checkbox"]{
     font-size: 40px;
     font-weight: 700;
 }
-/* Header */
-footer {
-    text-align: center;
-    background-color: #A49FFF;
-    color: #ffffff;
-    height: 250px;
 
-}
-
-footer a {
-    color: #ffffff;
-}
-
-#footer__mid p {
-    font-size: 40px;
-    font-family: Cormorant, serif;
-    font-weight: 700;
-}
-
-footer p {
-    font-weight: 700;
-    font-family: Cormorant, serif;
-}
-
-footer a i {
-    font-size: 50px;
-    margin: 0 10px;
-}
-
-footer p i {
-    font-size: 15pt;
-    margin-right: 10px;
-    box-shadow: #000000 ;
-}
 
 #terugnaarboven {
     position: fixed;
@@ -293,15 +267,6 @@ main article h2 {
 
 
 
-img {
-    width: 100%;
-
-}
-
-#head {
-    width: 620px;
-
-}
 
 
 
@@ -518,7 +483,7 @@ img {
     overflow: hidden;
     padding: 60px 0;
     width: 100%;
-    background: white;
+    background: #fff8f8;
     white-space: nowrap;
     position: relative;
     margin: 0 auto;
@@ -540,12 +505,12 @@ img {
   
   .logos:before {
     left: 0;
-    background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), #fff8f8);
   }
   
   .logos:after {
     right: 0;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), #fff8f8);
   }
   
   
