@@ -94,6 +94,7 @@ nav .menu-btn i:hover{
     color: #f196f8;
     text-shadow: 2px 4px 4px rgb(107, 107, 215);
     transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    cursor: url(assets/finga.png), auto !important;
 }
 input[type="checkbox"]{
     display: none;
@@ -226,7 +227,7 @@ input[type="checkbox"]{
     -webkit-transition: all 0.2s ease-out;
     -moz-transition: all 0.2s ease-out;
     transition: all 0.2s ease-out;
-    cursor: pointer;
+    cursor: url(assets/finga.png), auto !important;
 }
 @media screen and (max-width: 882px) {
     #terugnaarboven {

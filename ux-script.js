@@ -1,3 +1,4 @@
+
 function openModal(imageSrc) {
     const modal = document.getElementById("lightboxModal");
     const modalImg = document.getElementById("lightboxImg");
@@ -5,8 +6,7 @@ function openModal(imageSrc) {
     modal.style.display = "block";
     modalImg.src = imageSrc;
   }
-  
-  // Function to close the modal
+
   function closeModal() {
     const modal = document.getElementById("lightboxModal");
     modal.style.display = "none";
