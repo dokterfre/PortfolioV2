@@ -628,7 +628,7 @@ input[type="checkbox"] {
   
   .close:hover,
   .close:focus {
-    color: #bbb;
+    color: #ff82ea;
     text-decoration: none;
     cursor: url(assets/finga.png), auto !important;
   }
