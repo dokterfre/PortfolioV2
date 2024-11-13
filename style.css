@@ -310,7 +310,7 @@ input[type="checkbox"] {
 
 .bento {
     height: 100vh;
-    width: 60%;
+    width: 70vw;
     display: flex;
     align-items: center;
     margin: 0 auto;
@@ -442,7 +442,7 @@ input[type="checkbox"] {
     border: #ffffff solid 2px;
     transition: all 0.5s ease;
     color: #ffffff;
-    margin-right: 1em;
+    margin-left: 1em;
 }
 
 .but2:hover {
@@ -528,7 +528,7 @@ input[type="checkbox"] {
     transform: translateY(50%);
     transition: opacity 0.5s ease, transform 0.5s ease;
     z-index: 1;
-    margin: 1rem;
+    
 }
 
 .output1:hover .tooltiptext,
@@ -550,7 +550,7 @@ input[type="checkbox"] {
     transform: translateY(-50%);
     transition: opacity 0.5s ease, transform 0.5s ease;
     z-index: 1;
-    margin: 0.5rem 1rem 0 0;
+    
 }
 
 .output3:hover .tooltiptext,
@@ -655,17 +655,34 @@ input[type="checkbox"] {
         font-size: 13pt;
     }
 
-    .top {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
+    
     .top .but1 {
         width: 100%;
     }
+    .info {
+        font-size: 20pt;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .digi {
+        display: none;
+    }
+    .output {
+        width: auto;
+    }
+    .info{
+        font-size: 20pt;
+    }
+    
 }
 
 @media screen and (max-width: 920px) {
+    .hero {
+        background-position:  top;
+        background-size: auto;
+    }
+    
     .hero .intro h1 {
         font-size: 55pt;
     }
@@ -674,14 +691,69 @@ input[type="checkbox"] {
         font-size: 12pt;
     }
     .hero h2 {
-       
         width: 70%;
         text-align: left;
     }
+    .bento {
+        width: auto;
+    }
+    .bento h1 {
+        font-size: 35pt;
+    }
+    .image-box {
+        max-width: 300px;
+        height: 300px;
+    }
+    
 }
 
 @media screen and (max-width: 600px) {
     .hero .intro h1 {
-        font-size: 2px;
+        font-size: 35pt;
     }
+    .hero h2 {
+        display: none;
+        
+    }
+    .hero {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    .info{
+        font-size: 12pt;
+        padding: 2rem;
+    }
+    .info p {
+        font-size: 8pt;
+    }
+
+    
+
+    .output {
+        width: 80vw;
+        border: 2px;
+    }
+    .output1 {
+        border-right: solid white 1px;
+        border-bottom: solid white 1px;
+    }
+    
+    .output2 {
+        border-bottom: solid white 1px;
+        border-left: solid white 1px;
+    }
+    
+    .output3 {
+        border-top: solid white 1px;
+        border-right: solid white 1px;
+    }
+    
+    .output4 {
+        border-left: solid white 1px;
+        border-top: solid white 1px;
+    }
+
+    
+    
 }
