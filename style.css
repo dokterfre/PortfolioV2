@@ -130,7 +130,7 @@ input[type="checkbox"] {
         top: 96px;
         left: -100%;
         background: rgba(17, 17, 17, 0.9);
-        height: 50vh;
+        height: 25vh;
         width: 100%;
         text-align: center;
         display: block;
@@ -704,12 +704,15 @@ input[type="checkbox"] {
         max-width: 300px;
         height: 300px;
     }
+    nav ul li a {
+        font-size: 20pt;
+    }
     
 }
 
 @media screen and (max-width: 600px) {
     .hero .intro h1 {
-        font-size: 35pt;
+        font-size: 31pt;
     }
     .hero h2 {
         display: none;
@@ -752,6 +755,10 @@ input[type="checkbox"] {
     .output4 {
         border-left: solid white 1px;
         border-top: solid white 1px;
+    }
+
+    nav ul li a {
+        font-size: 12pt;
     }
 
     

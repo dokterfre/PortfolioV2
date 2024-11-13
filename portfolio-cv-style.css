@@ -86,7 +86,7 @@ nav ul li a:hover{
     cursor: url(assets/finga.png), auto !important;
 }
 nav .menu-btn i{
-    color: #fff;
+    color: #444444;
     font-size: 22px;
     display: none;
 }
@@ -110,7 +110,7 @@ input[type="checkbox"]{
         font-size: 30px;
     }
     nav {
-        background-color: rgba(17, 17, 17, 0.9);
+        background-color: rgba(0, 0, 0, 0.075);
         height: 6rem;
         position: fixed;
         top: 0;
@@ -126,8 +126,8 @@ input[type="checkbox"]{
         position: fixed;
         top: 96px;
         left: -100%;
-        background: rgba(17, 17, 17, 0.9);
-        height: 50vh;
+        background: rgba(0, 0, 0, 0.075);
+        height: 25vh;
         width: 100%;
         text-align: center;
         display: block;
@@ -145,7 +145,7 @@ input[type="checkbox"]{
         margin-left: -100%;
         display: block;
         font-size: 30px;
-        color: #fff;
+        color: #3f3f3f;
         transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     }
     #click:checked ~ ul li a{
@@ -194,52 +194,6 @@ input[type="checkbox"]{
 }
 
 
-#terugnaarboven {
-    position: fixed;
-    bottom: 0;
-    right: 25px;
-    background-color: #FF8FF1;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    padding: 0.5rem 2rem;
-}
-#terugnaarboven p {
-    color: #ffffff;
-    text-decoration: none;
-}
-#terugnaarboven2 {
-    position: fixed;
-    bottom: 0;
-    right: 25px;
-    background-color: #FF8FF1;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    padding: 1rem;
-}
-#terugnaarboven2 p {
-    color: #ffffff;
-    font-size: 25pt;
-    text-decoration: none;
-    text-align: center;
-}
-#terugnaarboven2:hover, #terugnaarboven:hover {
-    box-shadow: 0 0 30px 5px rgb(234, 116, 243);
-    -webkit-transition: all 0.2s ease-out;
-    -moz-transition: all 0.2s ease-out;
-    transition: all 0.2s ease-out;
-    cursor: url(assets/finga.png), auto !important;
-}
-@media screen and (max-width: 882px) {
-    #terugnaarboven {
-        display: none;
-    }
-
-}
-@media screen and (min-width: 882px) {
-    #terugnaarboven2 {
-        display: none;
-    }
-}
 
 
 
@@ -265,9 +219,6 @@ main article h2 {
     font-weight: 100
 ;
 }
-
-
-
 
 
 
@@ -370,7 +321,7 @@ main article h2 {
 
     
 .welkom {
-    width: 70%;
+    width: 60%;
     margin: 0 auto;
     margin-bottom: 10rem;
     margin-top: 10rem;
@@ -431,7 +382,7 @@ main article h2 {
     scale: .6; opacity: 0;
     animation: fade-in linear forwards;
     animation-timeline: view();
-    animation-range: cover contain;
+    animation-range: entry 30px;
     border-radius: 1.5rem;
 }
 
@@ -536,3 +487,78 @@ main article h2 {
     display: flex;
     flex-direction: column;
   }
+
+  .secu {
+    display: none;
+  }
+
+  @media screen and (max-width: 2220px) {
+    
+
+
+}
+
+@media screen and (max-width: 1920px) {
+ 
+       
+   .topic div, .skills {
+    width: 50%;
+   }
+}
+
+@media screen and (max-width: 1200px) {
+    
+
+   .topic div, .skills {
+    width: 100%;
+   }
+   
+
+    
+    
+}
+
+@media screen and (max-width: 920px) {
+    
+    nav ul li a {
+        font-size: 20pt;
+    }
+    .topic div {
+        margin: 1rem auto;
+    }
+    .secu {
+        display: flex;
+    }
+    .prima {
+        display: none;
+    }
+    
+}
+
+@media screen and (max-width: 600px) {
+    
+    nav ul li a {
+        font-size: 12pt;
+    }
+    .welkom p{
+        font-size: 10pt;
+    }
+    
+    .welkom{
+        width: 80%;
+        margin: 2rem auto;
+       }
+    main article h1{
+        font-size: 25pt;
+        font-weight: 700;
+    }
+    main article h2 {
+        font-size: 12pt;
+    }
+    .bij h1{
+        font-size: 35pt;
+    }
+    
+    
+
+}
