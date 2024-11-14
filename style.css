@@ -634,11 +634,12 @@ input[type="checkbox"] {
   }
 
   .tijdslijn{
-    margin: 0 auto;
+    margin: 2rem auto;
     width: 40%;
     color: #fff;
     padding: 2rem;
     height: 70vh;
+   
   }
   .tijdslijn ul {
     margin-bottom: 1rem;
