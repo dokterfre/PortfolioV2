@@ -17,6 +17,11 @@ main {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+     -webkit-background-size: cover;
+     -moz-background-size: cover;
+     -o-background-size: cover;
+     background-size: cover;
+    
 }
 
 .rotate {
@@ -744,6 +749,10 @@ input[type="checkbox"] {
     }
     nav ul li a {
         font-size: 20pt;
+    }
+    main {
+        
+        background-image: url("assets/maan3.jpg");
     }
     
 }
