@@ -334,7 +334,7 @@ input[type="checkbox"] {
 
 .row {
     flex: 1;
-    border-radius: 2em;
+    border-radius: 1em;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -376,7 +376,7 @@ input[type="checkbox"] {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 1em;
+    border-radius: 0em;
     overflow: hidden;
     height: 100%;
     background-color: rgba(159, 230, 54, 0.1);
@@ -462,7 +462,7 @@ input[type="checkbox"] {
 
 .output {
     height: 40%;
-    width: 30%;
+    width: 33%;
     display: flex;
     flex-wrap: wrap;
 }
@@ -633,6 +633,30 @@ input[type="checkbox"] {
     cursor: url(assets/finga.png), auto !important;
   }
 
+  .tijdslijn{
+    margin: 0 auto;
+    width: 40%;
+    color: #fff;
+    padding: 2rem;
+    height: 70vh;
+  }
+  .tijdslijn ul {
+    margin-bottom: 1rem;
+}
+
+  .tijdslijn ul li {
+    padding: 0.5em;
+  }
+  
+  .tijdslijn ul li a{
+    color: #fff;
+  }
+  .tijdslijn ul li a:hover{
+    color: #f196f8;
+  }
+  
+  
+
 
 
 @media screen and (max-width: 2220px) {
@@ -640,7 +664,7 @@ input[type="checkbox"] {
 
     .top .but1 {
         font-size: 9pt;
-        padding: 1.5em 2.1em;
+        
     }
 }
 
@@ -662,6 +686,15 @@ input[type="checkbox"] {
     .info {
         font-size: 20pt;
     }
+    .row2 h1{
+        font-size: 45pt;
+    }
+    .row2 p {
+        font-size: 12pt;
+    }
+    .row button {
+        padding: 1.3em 1.5em;
+    }
 }
 
 @media screen and (max-width: 1200px) {
@@ -674,6 +707,10 @@ input[type="checkbox"] {
     .info{
         font-size: 20pt;
     }
+    .tijdslijn{
+        width: 80%;
+        height: 40vh;
+      }
     
 }
 
