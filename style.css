@@ -384,24 +384,26 @@ nav ul li a:hover::after {
 .value-section {
     width: 97%;
     margin: 0 auto;
-  
     background-color: #fffffd;
     text-align: center;
 }
 
 .value-title {
     font-family: 'Oswald', sans-serif;
-    font-size: 14rem;
+    font-size: clamp(3.5rem, 12vw, 13rem);
     font-weight: 700;
-    letter-spacing: -2px;
+    letter-spacing: -0.02em;
     color: #000;
     text-transform: uppercase;
+    line-height: 0.9;
+    margin-bottom: 1rem;
 }
 
 .value-sub {
-    font-size: 3rem;
+    font-size: clamp(1.1rem, 3vw, 3rem);
     font-weight: 700;
     text-transform: uppercase;
+    margin-bottom: 1.5rem;
 }
 
 .value-sub span {
@@ -429,8 +431,6 @@ nav ul li a:hover::after {
 }
 
 
-
-/* RESPONSIVE */
 @media (max-width: 900px) {
     .value-title {
         font-size: 4rem;
