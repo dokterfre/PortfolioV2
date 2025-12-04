@@ -195,7 +195,7 @@ nav ul li a:hover::after {
 .works-header {
     width: 97%;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 2rem 0 2rem 0;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
