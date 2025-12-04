@@ -251,29 +251,66 @@ input[type="checkbox"] {
     cursor: url(assets/finga.png), auto !important;
 }
 
-/* Works gallery */
+.works-header {
+    width: 100%;
+    padding: 4rem 4rem 2rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-bottom: 2px solid black;
+    background: white;
+}
+
+.works-header h2 {
+    font-size: 4rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: black;
+}
+
+.works-contact {
+    text-align: right;
+    font-size: 0.9rem;
+}
+
+.works-contact a {
+    color: #ff82ea;
+    text-decoration: none;
+    font-weight: 700;
+    display: block;
+}
+
+.works-contact span {
+    color: black;
+    font-weight: 600;
+}
+
+
+/* ===== WORKS GRID ===== */
+
 .works {
+    width: 100%;
+    padding: 3rem 3rem 6rem 3rem;
     display: flex;
     flex-wrap: wrap;
-    gap: 2em;
-    width: 90%;
-    margin: 0 auto;
-    justify-content: center;
+    gap: 1.5rem;
+    justify-content: space-between;
+    background: white;
 }
 
 .image-box {
-    flex: 1 1 400px;
-    max-width: 400px;
-    height: 400px;
+    width: calc(33.333% - 1rem); /* EXACTLY 3 PER ROW */
+    aspect-ratio: 1 / 1;
     background-size: cover;
     background-position: center;
-    border-radius: 1em;
+    border-radius: 0; /* NO ROUNDING */
     transition: transform 0.3s ease;
     cursor: url(assets/finga.png), auto !important;
 }
 
+
 .image-box:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
 
 /* Modal lightbox */
@@ -341,9 +378,8 @@ input[type="checkbox"] {
         width: 70%;
         text-align: left;
     }
-    .image-box {
-        max-width: 300px;
-        height: 300px;
+    .works {
+        grid-template-columns: repeat(2, 1fr);
     }
     nav ul li a {
         font-size: 20pt;
@@ -364,7 +400,31 @@ input[type="checkbox"] {
         padding-left: 2rem;
         padding-right: 2rem;
     }
+    .works {
+        grid-template-columns: 1fr;
+    }
     nav ul li a {
         font-size: 12pt;
+    }
+}
+@media (max-width: 1100px) {
+    .image-box {
+        width: calc(50% - 1rem); /* 2 per row */
+    }
+}
+
+@media (max-width: 600px) {
+    .image-box {
+        width: 100%; /* 1 per row */
+    }
+
+    .works-header {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+
+    .works-header h2 {
+        font-size: 3rem;
     }
 }
