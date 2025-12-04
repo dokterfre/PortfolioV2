@@ -17,13 +17,12 @@ main {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-     -webkit-background-size: cover;
-     -moz-background-size: cover;
-     -o-background-size: cover;
-     background-size: cover;
-    
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
 }
 
+/* Logo rotation animation */
 .rotate {
     display: inline-block;
     animation: rotate 7s linear infinite;
@@ -38,6 +37,7 @@ main {
     }
 }
 
+/* Navigation */
 nav {
     display: flex;
     height: 150px;
@@ -165,6 +165,7 @@ input[type="checkbox"] {
     }
 }
 
+/* Scroll progress indicator */
 .scroll-watcher {
     height: 10px;
     position: fixed;
@@ -174,10 +175,8 @@ input[type="checkbox"] {
     width: 100%;
     scale: 0 1;
     transform-origin: left;
-
     animation: scroll-watcher linear;
     animation-timeline: scroll();
-
     filter: drop-shadow(3px 5px 9px rgba(185, 12, 187, 0.43));
 }
 
@@ -185,6 +184,7 @@ input[type="checkbox"] {
     to { scale: 1 1; }
 }
 
+/* Hero section */
 .hero {
     padding-top: 250px;
     padding-bottom: 270px;
@@ -200,7 +200,6 @@ input[type="checkbox"] {
 .hero .intro {
     color: #fffcfc;
     margin: 0 auto;
-    animation: fade-out linear;
     text-align: center;
     filter: drop-shadow(3px 5px 9px rgba(7, 1, 7, 0.116));
 }
@@ -232,10 +231,7 @@ input[type="checkbox"] {
     margin-top: 1rem;
 }
 
-@keyframes fade-out {
-    to { opacity: 0; }
-}
-
+/* Button */
 .but1 {
     padding: 1rem 3rem;
     margin-top: 2rem;
@@ -255,328 +251,7 @@ input[type="checkbox"] {
     cursor: url(assets/finga.png), auto !important;
 }
 
-.terugnaarboven {
-    position: fixed;
-    bottom: 0;
-    right: 25px;
-    background-color: #FF8FF1;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    padding: 0.5rem 2rem;
-    z-index: 500;
-}
-
-.terugnaarboven p {
-    color: #ffffff;
-    text-decoration: none;
-}
-
-.terugnaarboven2 {
-    position: fixed;
-    bottom: 0;
-    right: 25px;
-    background-color: #FF8FF1;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    padding: 1rem;
-    z-index: 500;
-}
-
-.terugnaarboven2 p {
-    color: #ffffff;
-    font-size: 25pt;
-    text-decoration: none;
-    text-align: center;
-}
-
-.terugnaarboven2:hover,
-.terugnaarboven:hover {
-    box-shadow: 0 0 30px 5px rgb(234, 116, 243);
-    transition: all 0.2s ease-out;
-    cursor: url(assets/finga.png), auto !important;
-}
-
-
-@media screen and (max-width: 882px) {
-    .terugnaarboven {
-        display: none;
-    }
-}
-
-@media screen and (min-width: 882px) {
-    .terugnaarboven2 {
-        display: none;
-    }
-}
-
-.digi {
-    background-color: #f4f4ff;
-}
-
-.bento {
-    height: 100vh;
-    width: 70vw;
-    display: flex;
-    align-items: center;
-    margin: 0 auto;
-    font-family: Helvetica, sans-serif;
-}
-
-.cont {
-    height: 70vh;
-    padding: 1em;
-    display: flex;
-    gap: 1em;
-}
-
-.col-left,
-.col-right {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-}
-
-.row {
-    flex: 1;
-    border-radius: 1em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.3s ease;
-}
-
-.row2 {
-    flex: 2;
-    flex-wrap: wrap;
-    align-content: space-between;
-    padding: 3em;
-    background-color: rgb(255, 221, 250);
-}
-
-.row2 h1 {
-    font-size: 65pt;
-    font-weight: 800;
-    line-height: 100%;
-    color: #1d0716;
-}
-
-.row2 p {
-    font-size: 14pt;
-}
-
-.row3 {
-    display: flex;
-    gap: 1em;
-    flex: 1;
-    background-color: rgba(255, 255, 255, 0);
-}
-
-.row-col {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 0em;
-    overflow: hidden;
-    height: 100%;
-    background-color: rgba(159, 230, 54, 0.1);
-}
-
-.row img,
-.row-col img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.top {
-    flex: 2;
-    background-image: url(assets/intr.jpg);
-    background-size: cover;
-    background-position: top;
-    display: flex;
-    justify-content: flex-end;
-    align-items: end;
-    padding: 2em;
-    transition: transform 0.3s ease;
-}
-
-.left {
-    background-image: url(assets/uxie.jpg);
-    background-size: cover;
-    background-position: top;
-    display: flex;
-    align-items: end;
-    justify-content: start;
-    padding: 1em;
-    transition: transform 0.3s ease;
-}
-
-.right {
-    background-image: url(assets/tinyhousebnw.jpg);
-    background-size: cover;
-    background-position: top;
-    display: flex;
-    align-items: end;
-    justify-content: start;
-    padding: 1em;
-    transition: transform 0.3s ease;
-}
-
-.row3 p {
-    filter: drop-shadow(3px 5px 9px rgba(7, 1, 7, 0.493));
-    font-size: 21pt;
-    font-weight: 600;
-    color: #f2f2f2;
-}
-
-.row2:hover,
-.right:hover,
-.left:hover,
-.top:hover {
-    transform: scale(1.02);
-}
-
-.but2 {
-    background-color: rgba(0, 0, 0, 0.144);
-    border: #ffffff solid 2px;
-    transition: all 0.5s ease;
-    color: #ffffff;
-    margin-left: 1em;
-}
-
-.but2:hover {
-    box-shadow: 0 0 30px 5px rgba(255, 255, 255, 0.35);
-    background-color: rgba(255, 255, 255, 0.94);
-    transition: all 0.5s ease;
-    color: #000000;
-    cursor: url(assets/finga.png), auto !important;
-}
-
-.expertise {
-    height: 120vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.output {
-    height: 40%;
-    width: 33%;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.output1 {
-    border-right: solid white 3px;
-    border-bottom: solid white 3px;
-    width: 50%;
-    height: 50%;
-}
-
-.output2 {
-    border-bottom: solid white 3px;
-    border-left: solid white 3px;
-    width: 50%;
-    height: 50%;
-}
-
-.output3 {
-    border-top: solid white 3px;
-    border-right: solid white 3px;
-    width: 50%;
-    height: 50%;
-}
-
-.output4 {
-    border-left: solid white 3px;
-    border-top: solid white 3px;
-    width: 50%;
-    height: 50%;
-}
-
-.info {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 30pt;
-    font-weight: 800;
-    position: relative;
-    transition: color 0.5s ease;
-}
-
-.info:hover {
-    color: #ff67e6;
-}
-
-.tooltiptext {
-    opacity: 0;
-    color: #fff;
-    filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.164));
-}
-
-.output1 .tooltiptext,
-.output2 .tooltiptext {
-    text-align: center;
-    padding: 1rem;
-    border-radius: 6px;
-    font-size: 11pt;
-    font-weight: 100;
-    position: absolute;
-    bottom: 70%;
-    transform: translateY(50%);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-    z-index: 1;
-    
-}
-
-.output1:hover .tooltiptext,
-.output2:hover .tooltiptext {
-    visibility: visible;
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.output3 .tooltiptext,
-.output4 .tooltiptext {
-    text-align: center;
-    padding: 1rem;
-    border-radius: 6px;
-    font-size: 11pt;
-    font-weight: 100;
-    position: absolute;
-    top: 70%;
-    transform: translateY(-50%);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-    z-index: 1;
-    
-}
-
-.output3:hover .tooltiptext,
-.output4:hover .tooltiptext {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.bij {
-    scale: 0.9;
-    opacity: 0;
-    animation: fade-in linear forwards;
-}
-
-@keyframes fade-in {
-    to {
-        scale: 1;
-        opacity: 1;
-    }
-}
-
+/* Works gallery */
 .works {
     display: flex;
     flex-wrap: wrap;
@@ -584,25 +259,25 @@ input[type="checkbox"] {
     width: 90%;
     margin: 0 auto;
     justify-content: center;
-  }
-  
-  .image-box {
+}
+
+.image-box {
     flex: 1 1 400px;
     max-width: 400px;
-    height: 400px; 
-    background-size: cover; 
-    background-position: center; 
-    border-radius: 1em; 
-    transition: transform 0.3s ease; 
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 1em;
+    transition: transform 0.3s ease;
     cursor: url(assets/finga.png), auto !important;
-  }
-  
-  .image-box:hover {
-    transform: scale(1.05); 
-  }
- 
-  
-  .modal {
+}
+
+.image-box:hover {
+    transform: scale(1.05);
+}
+
+/* Modal lightbox */
+.modal {
     display: none;
     position: fixed;
     z-index: 1000;
@@ -612,16 +287,16 @@ input[type="checkbox"] {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.8);
-  }
-  
-  .modal-content {
+}
+
+.modal-content {
     margin: auto;
     display: block;
     max-width: 80%;
     max-height: 80%;
-  }
-  
-  .close {
+}
+
+.close {
     position: absolute;
     top: 20px;
     right: 35px;
@@ -629,51 +304,16 @@ input[type="checkbox"] {
     font-size: 40px;
     font-weight: bold;
     cursor: url(assets/finga.png), auto !important;
-  }
-  
-  .close:hover,
-  .close:focus {
+}
+
+.close:hover,
+.close:focus {
     color: #ff82ea;
     text-decoration: none;
     cursor: url(assets/finga.png), auto !important;
-  }
-
-  .tijdslijn{
-    margin: 2rem auto;
-    width: 40%;
-    color: #fff;
-    padding: 2rem;
-    height: 70vh;
-   
-  }
-  .tijdslijn ul {
-    margin-bottom: 1rem;
 }
 
-  .tijdslijn ul li {
-    padding: 0.5em;
-  }
-  
-  .tijdslijn ul li a{
-    color: #fff;
-  }
-  .tijdslijn ul li a:hover{
-    color: #f196f8;
-  }
-  
-  
-
-
-
-@media screen and (max-width: 2220px) {
-    
-
-    .top .but1 {
-        font-size: 9pt;
-        
-    }
-}
-
+/* Responsive design */
 @media screen and (max-width: 1920px) {
     .hero .intro h1 {
         font-size: 60pt;
@@ -684,64 +324,22 @@ input[type="checkbox"] {
     .hero h2 {
         font-size: 13pt;
     }
-
-    
-    .top .but1 {
-        width: 100%;
-    }
-    .info {
-        font-size: 20pt;
-    }
-    .row2 h1{
-        font-size: 45pt;
-    }
-    .row2 p {
-        font-size: 12pt;
-    }
-    .row button {
-        padding: 1.3em 1.5em;
-    }
-}
-
-@media screen and (max-width: 1200px) {
-    .digi {
-        display: none;
-    }
-    .output {
-        width: auto;
-    }
-    .info{
-        font-size: 20pt;
-    }
-    .tijdslijn{
-        width: 80%;
-        height: 40vh;
-      }
-    
 }
 
 @media screen and (max-width: 920px) {
     .hero {
-        background-position:  top;
+        background-position: top;
         background-size: auto;
     }
-    
     .hero .intro h1 {
         font-size: 55pt;
     }
-
     .hero h3 {
         font-size: 12pt;
     }
     .hero h2 {
         width: 70%;
         text-align: left;
-    }
-    .bento {
-        width: auto;
-    }
-    .bento h1 {
-        font-size: 35pt;
     }
     .image-box {
         max-width: 300px;
@@ -751,10 +349,8 @@ input[type="checkbox"] {
         font-size: 20pt;
     }
     main {
-        
         background-image: url("assets/maan3.jpg");
     }
-    
 }
 
 @media screen and (max-width: 600px) {
@@ -763,51 +359,12 @@ input[type="checkbox"] {
     }
     .hero h2 {
         display: none;
-        
     }
     .hero {
         padding-left: 2rem;
         padding-right: 2rem;
     }
-
-    .info{
-        font-size: 12pt;
-        padding: 2rem;
-    }
-    .info p {
-        font-size: 8pt;
-    }
-
-    
-
-    .output {
-        width: 80vw;
-        border: 2px;
-    }
-    .output1 {
-        border-right: solid white 1px;
-        border-bottom: solid white 1px;
-    }
-    
-    .output2 {
-        border-bottom: solid white 1px;
-        border-left: solid white 1px;
-    }
-    
-    .output3 {
-        border-top: solid white 1px;
-        border-right: solid white 1px;
-    }
-    
-    .output4 {
-        border-left: solid white 1px;
-        border-top: solid white 1px;
-    }
-
     nav ul li a {
         font-size: 12pt;
     }
-
-    
-    
 }
