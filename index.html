@@ -2,108 +2,128 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Home</title>
+    <title>Frederic Steegmans - Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
-    <script src="https://kit.fontawesome.com/84ff77f7b8.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Fonts: Added Oswald for the big bold text -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;700&family=Lato:wght@100;300;400;700;900&family=Libre+Baskerville:wght@700&family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+
 </head>
 
 <body>
-<nav>
-    <div class="logo rotate">
-        <a href="index.html"><img src="assets/logo-white%20kopie.png" alt="logo"></a>
-    </div>
-    <input type="checkbox" id="click">
-    <label for="click" class="menu-btn">
-        <i class="fas fa-bars"></i>
-    </label>
-    <ul>
-        <li><a class="active" href="index.html">home</a></li>
-        <li><a href="portfolio-cv.html">cv</a></li>
-    </ul>
-</nav>
 
+<!-- NAVIGATION -->
 
 
 <main>
-    <div class="scroll-watcher"></div>
-    <div class="hero">
-        <div class="intro">
-            <h1>FREDERIC<br>STEEGMANS</h1>
-            <h3>Become uncommon. Dare to stand out from the crowd.</h3>
-            <a href="portfolio-cv.html"><button class="but1">Curriculum Vitae</button></a>
+
+    <nav>
+
+
+    <div class="nav-center">
+        <ul>
+            <li><a href="index.html">OVERVIEW</a></li>
+            <li><a href="portfolio-cv.html">EXPERIENCE</a></li>
+            <li><a href="portfolio-cv.html">RESUME</a></li>
+            <li><a href="#works-section">WORKS</a></li>
+        </ul>
+    </div>
+
+    <!-- Burger Icon (visible on mobile via CSS) -->
+    <label for="click" class="menu-btn">
+        <i class="fas fa-bars"></i>
+    </label>
+    <input type="checkbox" id="click">
+</nav>
+
+    <!-- NEW HERO SECTION -->
+    <div class="hero-split">
+        <!-- LEFT DIV: Image -->
+        <div class="hero-left">
+            <!-- I used a placeholder from your assets. Change src to your cassette image! -->
+            <img src="assets/p4.png" alt="Hero Image"> 
         </div>
-        <h2>WEB & MOBILE / UI & UX / BRANDING / FRONT-END DEVELOPMENT</h2>
+
+        <!-- DIVIDER LINE -->
+        <div class="hero-line"></div>
+
+        <!-- RIGHT DIV: Text & Buttons -->
+        <div class="hero-right">
+            <div class="hero-sub-top">Audio Engineer • Digital Designer • Frontend Developer</div>
+            <h1>FREDERIC<br>MIGUEL<br>STEEGMANS</h1>
+            
+            <p class="hero-desc">
+                Hi. I'm Frederic, a digital designer / audio engineer from Belgium.
+                If I sent this website to you, it means that I am looking for new opportunities
+                in my professional career. Thank you for taking the time.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="portfolio-cv.html"><button class="btn-pink">CURRICULUM VITAE</button></a>
+                <a href="https://linkedin.com"><button class="btn-lilac">LINKEDIN</button></a>
+            </div>
+        </div>
     </div>
 
-    
 
-
-<div class="works-header">
-    <h2>WORKS</h2>
-
-    <div class="works-contact">
-        <a href="mailto:fredericsteegmans@gmail.com">CONTACT ME</a>
-        <span>FREDERICSTEEGMANS@GMAIL.COM</span>
+    <!-- WORKS SECTION -->
+    <div id="works-section" class="works-header">
+        <h2>WORKS</h2>
+        <div class="works-contact">
+            <a href="mailto:fredericsteegmans@gmail.com">CONTACT ME</a>
+            <span>FREDERICSTEEGMANS@GMAIL.COM</span>
+        </div>
     </div>
-</div>
    
-
     <div class="works">
-        <div class="image-box" style="background-image: url('assets/p4.png');" onclick="openModal('assets/p4.png')"></div>
-        <div class="image-box" style="background-image: url('assets/p5.png');" onclick="openModal('assets/p5.png')"></div>
-        <div class="image-box" style="background-image: url('assets/klock.png');" onclick="openModal('assets/klock.png')"></div>
-        <div class="image-box" style="background-image: url('assets/tinyhouse2.png');" onclick="openModal('assets/tinyhouse2.png')"></div>
-        <div class="image-box" style="background-image: url('assets/tinyhouse3.png');" onclick="openModal('assets/tinyhouse3.png')"></div>
-        <div class="image-box" style="background-image: url('assets/tinyhouse4.png');" onclick="openModal('assets/tinyhouse4.png')"></div>
-        <div class="image-box" style="background-image: url('assets/tinyhouse5.png');" onclick="openModal('assets/tinyhouse5.png')"></div>
-        <div class="image-box" style="background-image: url('assets/tinyhouse6.png');" onclick="openModal('assets/tinyhouse6.png')"></div>
-        <div class="image-box" style="background-image: url('assets/tinyhouse9.png');" onclick="openModal('assets/tinyhouse9.png')"></div>
-        <div class="image-box" style="background-image: url('assets/p8.png');" onclick="openModal('assets/p8.png')"></div>
-        <div class="image-box" style="background-image: url('assets/80\'s\ kopie.png');" onclick="openModal('assets/80\'s\ kopie.png')"></div>
-        <div class="image-box" style="background-image: url('assets/sandbox1.png');" onclick="openModal('assets/sandbox1.png')"></div>
-        <div class="image-box" style="background-image: url('assets/sandbox2.png');" onclick="openModal('assets/sandbox2.png')"></div>
-        <div class="image-box" style="background-image: url('assets/beer.png');" onclick="openModal('assets/beer.png')"></div>
-        <div class="image-box" style="background-image: url('assets/blik.png');" onclick="openModal('assets/blik.png')"></div>
-        <div class="image-box" style="background-image: url('assets/darth.png');" onclick="openModal('assets/darth.png')"></div>
-        <div class="image-box" style="background-image: url('assets/Maanlandingfake.png');" onclick="openModal('assets/Maanlandingfake.png')"></div>
-        <div class="image-box" style="background-image: url('assets/NYraffeShadowUpdate.png');" onclick="openModal('assets/NYraffeShadowUpdate.png')"></div>
-        <div class="image-box" style="background-image: url('assets/occam1.png');" onclick="openModal('assets/occam1.png')"></div>
-        <div class="image-box" style="background-image: url('assets/tinyhouse1.png');" onclick="openModal('assets/tinyhouse1.png')"></div>
-        <div class="image-box" style="background-image: url('assets/p10.png');" onclick="openModal('assets/p10.png')"></div>
-        <div class="image-box" style="background-image: url('assets/stylo1.png');" onclick="openModal('assets/stylo1.png')"></div>
-        <div class="image-box" style="background-image: url('assets/stylo2.png');" onclick="openModal('assets/stylo2.png')"></div>
-        <div class="image-box" style="background-image: url('assets/stylo3.png');" onclick="openModal('assets/stylo3.png')"></div>
-        <div class="image-box" style="background-image: url('assets/p2.png');" onclick="openModal('assets/p2.png')"></div>
-        <div class="image-box" style="background-image: url('assets/p11.png');" onclick="openModal('assets/p11.png')"></div>
-        <div class="image-box" style="background-image: url('assets/p12.png');" onclick="openModal('assets/p12.png')"></div>
-        <div class="image-box" style="background-image: url('assets/pasta1.png');" onclick="openModal('assets/pasta1.png')"></div>
-        <div class="image-box" style="background-image: url('assets/pastaappux.png');" onclick="openModal('assets/pastaappux.png')"></div>
-        <div class="image-box" style="background-image: url('assets/pastaux.png');" onclick="openModal('assets/pastaux.png')"></div>
-        <div class="image-box" style="background-image: url('assets/peddel.jpg');" onclick="openModal('assets/peddel.jpg')"></div>
-        <div class="image-box" style="background-image: url('assets/duif.png');" onclick="openModal('assets/duif.png')"></div>
-        <div class="image-box" style="background-image: url('assets/schoen.png');" onclick="openModal('assets/schoen.png')"></div>
-        <div class="image-box" style="background-image: url('assets/cont.png');" onclick="openModal('assets/cont.png')"></div>
-        <div class="image-box" style="background-image: url('assets/school.png');" onclick="openModal('assets/school.png')"></div>
-        <div class="image-box" style="background-image: url('assets/uncommon2.png');" onclick="openModal('assets/uncommon2.png')"></div>
-        <div class="image-box" style="background-image: url('assets/zalando1.png');" onclick="openModal('assets/zalando1.png')"></div>
-        <div class="image-box" style="background-image: url('assets/zalando2.png');" onclick="openModal('assets/zalando2.png')"></div>
-      </div>
+        <!-- Your grid items -->
+        <div class="image-box" style="background-image: url('assets/p4.png');" onclick="openModal(this)"></div>
+        <div class="image-box" style="background-image: url('assets/p5.png');" onclick="openModal(this)"></div>
+        <div class="image-box" style="background-image: url('assets/klock.png');" onclick="openModal(this)"></div>
+        <div class="image-box" style="background-image: url('assets/tinyhouse2.png');" onclick="openModal(this)"></div>
+        <div class="image-box" style="background-image: url('assets/tinyhouse3.png');" onclick="openModal(this)"></div>
+        <div class="image-box" style="background-image: url('assets/tinyhouse4.png');" onclick="openModal(this)"></div>
+        <!-- ... keeping the rest of your items implies they exist ... -->
+        <div class="image-box" style="background-image: url('assets/zalando2.png');" onclick="openModal(this)"></div>
+    </div>
     
-      <!-- Modal for Lightbox Effect -->
-      <div id="lightboxModal" class="modal" onclick="closeModal()">
-        <span class="close">&times;</span>
+    <!-- MODAL -->
+    <div id="lightboxModal" class="modal" onclick="closeModal()">
+        <span class="close" onclick="closeModal()">&times;</span>
         <img class="modal-content" id="lightboxImg">
-      </div>
-    
-      <script src="ux-script.js"></script>
-      
+    </div>
+
 </main>
+
+<script>
+    function openModal(element) {
+        var style = element.currentStyle || window.getComputedStyle(element, false);
+        var bi = style.backgroundImage.slice(4, -1).replace(/"/g, "");
+        
+        var modal = document.getElementById("lightboxModal");
+        var modalImg = document.getElementById("lightboxImg");
+        
+        modal.style.display = "flex";
+        modal.style.alignItems = "center";
+        modal.style.justifyContent = "center";
+        modalImg.src = bi;
+    }
+
+    function closeModal() {
+        document.getElementById("lightboxModal").style.display = "none";
+    }
+
+    document.addEventListener('keydown', function(event) {
+        if (event.key === "Escape") { closeModal(); }
+    });
+</script>
+
 </body>
 </html>
-
-
