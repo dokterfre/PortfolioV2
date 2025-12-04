@@ -193,8 +193,9 @@ nav ul li a:hover::after {
 
 /* --- WORKS HEADER --- */
 .works-header {
-    width: 100%;
-    padding: 5rem 4rem 2rem 4rem;
+    width: 97%;
+    margin: 0 auto;
+    padding: 2rem;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -234,7 +235,7 @@ nav ul li a:hover::after {
 /* --- WORKS GRID --- */
 .works {
     width: 100%;
-    padding: 2rem 4rem 6rem 4rem;
+   padding: 1.5rem;
     display: flex;
     flex-wrap: wrap;
     gap: 1.5rem;
@@ -253,7 +254,7 @@ nav ul li a:hover::after {
 }
 
 .image-box:hover {
-    transform: scale(1.02);
+    transform: scale(0.98);
     /* Slight zoom on hover */
     z-index: 2;
 }
