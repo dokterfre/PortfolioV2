@@ -84,9 +84,10 @@ nav ul li a:hover::after {
 .hero-split {
     display: flex;
     align-items: center;
-    width: 80vw;
-    min-height: 100vh;
+    width: 90vw;
+    min-height: 80vh;
     margin:0 auto;
+    margin: 3rem auto;
 }
 
 /* LEFT SIDE: IMAGE */
@@ -95,7 +96,7 @@ nav ul li a:hover::after {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 2rem;
+    padding-right: 5rem;
     height: 100%;
 }
 
@@ -109,8 +110,8 @@ nav ul li a:hover::after {
 
 /* VERTICAL DIVIDER */
 .hero-line {
-    width: 3px;
-    height: 60vh;
+    width: 2px;
+    height: 45vh;
     background-color: #000;
     flex-shrink: 0;
 }
@@ -122,11 +123,10 @@ nav ul li a:hover::after {
     flex-direction: column;
     justify-content: center;
     padding-left: 5rem;
-    padding-right: 4rem;
 }
 
 .hero-sub-top {
-    font-size: 0.9rem;
+    font-size: 1.3rem;
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -136,9 +136,9 @@ nav ul li a:hover::after {
 
 .hero-right h1 {
     font-family: 'Oswald', sans-serif;
-    font-size: 6rem;
+    font-size: 9rem;
     line-height: 0.85;
-    font-weight: 700;
+    font-weight: 900;
     color: #0d0d0d;
     text-transform: uppercase;
     margin-bottom: 2rem;
@@ -148,7 +148,6 @@ nav ul li a:hover::after {
     font-size: 1.1rem;
     line-height: 1.5;
     color: #333;
-    max-width: 600px;
     margin-bottom: 3rem;
     font-weight: 300;
 }
@@ -291,7 +290,7 @@ nav ul li a:hover::after {
 
 /* --- FINGY SECTION --- */
 .fingy {
-    height: 20vh;
+    height: 30vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -466,5 +465,5 @@ nav ul li a:hover::after {
 }
 
 a {
-    cursor: url(assets/handje.webp), pointer !important;
+    cursor: url(assets/), pointer !important;
 }
