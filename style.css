@@ -85,9 +85,10 @@ nav ul li a:hover::after {
     display: flex;
     align-items: center;
     width: 90vw;
-    min-height: 80vh;
+    min-height: 70vh;
     margin:0 auto;
-    margin: 3rem auto;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
 }
 
 /* LEFT SIDE: IMAGE */
@@ -126,7 +127,7 @@ nav ul li a:hover::after {
 }
 
 .hero-sub-top {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -136,7 +137,7 @@ nav ul li a:hover::after {
 
 .hero-right h1 {
     font-family: 'Oswald', sans-serif;
-    font-size: 9rem;
+    font-size: 8rem;
     line-height: 0.85;
     font-weight: 900;
     color: #0d0d0d;
@@ -145,47 +146,114 @@ nav ul li a:hover::after {
 }
 
 .hero-desc {
-    font-size: 1.1rem;
+    font-size: 1rem;
     line-height: 1.5;
     color: #333;
     margin-bottom: 3rem;
     font-weight: 300;
 }
 
-.hero-buttons {
-    display: flex;
-    gap: 1.5rem;
+/* From Uiverse.io by cssbuttons-io */ 
+.btn {
+  position: relative;
+  font-size: 17px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1em 2.5em;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: all 0.2s;
+  border: none;
+  font-family: inherit;
+  font-weight: 500;
+  color: rgb(255, 255, 255);
+  background-color: rgb(255, 132, 245);
+  margin-right: 0.6rem;
 }
 
-.btn-pink {
-    background-color: #ff82ea;
-    color: white;
-    border: none;
-    padding: 15px 35px;
-    font-size: 0.85rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    transition: 0.3s;
-    letter-spacing: 1px;
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.btn-lilac {
-    background-color: #dcb0f2;
-    color: white;
-    border: none;
-    padding: 15px 35px;
-    font-size: 0.85rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    transition: 0.3s;
-    letter-spacing: 1px;
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(255, 255, 255, 0.2);
 }
 
-.btn-pink:hover,
-.btn-lilac:hover {
-    transform: translateY(-5px);
-    box-shadow: 5px 5px 0px black;
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
 }
+
+.btn::after {
+  background-color: rgb(255, 132, 245);
+}
+
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+
+.butn {
+  position: relative;
+  font-size: 17px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1em 2.5em;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: all 0.2s;
+  border: none;
+  font-family: inherit;
+  font-weight: 500;
+  color: rgb(255, 255, 255);
+  background-color: rgb(255, 157, 239);
+}
+
+.butn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.butn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(255, 255, 255, 0.2);
+}
+
+.butn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+}
+
+.butn::after {
+  background-color:  rgb(255, 157, 239);
+}
+
+.butn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
 
 /* --- WORKS HEADER --- */
 .works-header {
@@ -196,7 +264,8 @@ nav ul li a:hover::after {
     justify-content: space-between;
     align-items: flex-end;
     border-bottom: 3px solid black;
-    background: #fffffd;
+    margin-top: 5rem;
+
 }
 
 .works-header h2 {
