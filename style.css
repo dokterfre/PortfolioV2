@@ -10,6 +10,7 @@ html {
     scroll-behavior: smooth;
 }
 
+
 body {
     background-color: #fffffd;
     overflow-x: hidden;
@@ -28,7 +29,6 @@ nav {
 
 .logo img {
     width: 5rem;
-    cursor: pointer;
 }
 
 /* Menu Links */
@@ -166,7 +166,6 @@ nav ul li a:hover::after {
     font-size: 0.85rem;
     font-weight: 700;
     text-transform: uppercase;
-    cursor: pointer;
     transition: 0.3s;
     letter-spacing: 1px;
 }
@@ -179,7 +178,6 @@ nav ul li a:hover::after {
     font-size: 0.85rem;
     font-weight: 700;
     text-transform: uppercase;
-    cursor: pointer;
     transition: 0.3s;
     letter-spacing: 1px;
 }
@@ -248,7 +246,6 @@ nav ul li a:hover::after {
     aspect-ratio: 1 / 1;
     background-size: cover;
     background-position: center;
-    cursor: pointer;
     transition: transform 0.3s ease;
 }
 
@@ -285,12 +282,39 @@ nav ul li a:hover::after {
     color: #fff;
     font-size: 50px;
     font-weight: 300;
-    cursor: pointer;
     transition: color 0.2s;
 }
 
 .close:hover {
     color: #ff82ea;
+}
+
+/* --- FINGY SECTION --- */
+.fingy {
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+.fingy img {
+    max-height: 60%;
+    max-width: 150px;
+    width: auto;
+    height: auto;
+    transform: rotate(90deg);
+}
+
+@media (max-width: 768px) {
+    .fingy {
+        height: 15vh;
+        margin: 2rem auto;
+    }
+    
+    .fingy img {
+        max-width: 100px;
+    }
 }
 
 /* --- RESPONSIVE --- */
@@ -306,13 +330,13 @@ nav ul li a:hover::after {
 
 @media (max-width: 1000px) {
     nav {
-        padding: 2rem 2rem;
+        display: none;
     }
 
     .hero-split {
         flex-direction: column;
         height: auto;
-        padding-top: 150px;
+        padding-top: 2rem;
         min-height: auto;
     }
 
@@ -337,13 +361,11 @@ nav ul li a:hover::after {
     }
 
     nav ul {
-        display: none;
+        display: none !important;
     }
 
     .menu-btn {
-        display: block;
-        font-size: 2rem;
-        cursor: pointer;
+        display: none;
     }
 
     .image-box {
@@ -365,7 +387,6 @@ nav ul li a:hover::after {
         text-align: left;
     }
 }
-
 @media (max-width: 600px) {
     .image-box {
         width: 100%;
@@ -442,4 +463,8 @@ nav ul li a:hover::after {
     .value-text {
         padding: 0 1rem;
     }
+}
+
+a {
+    cursor: url(assets/handje.webp), pointer !important;
 }
