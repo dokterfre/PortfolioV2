@@ -86,7 +86,6 @@ nav ul li a:hover::after {
     align-items: center;
     width: 80vw;
     min-height: 100vh;
-    padding: 5rem;
     margin:0 auto;
 }
 
@@ -101,7 +100,7 @@ nav ul li a:hover::after {
 }
 
 .hero-left img {
-    max-width: 80%;
+    width: 100%;
     height: auto;
     filter: drop-shadow(10px 20px 20px rgba(0, 0, 0, 0.25));
     /* REMOVED ROTATION HERE */
