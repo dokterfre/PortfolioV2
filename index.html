@@ -31,22 +31,18 @@
 
     <div class="nav-center">
         <ul>
-            <li><a href="index.html">OVERVIEW</a></li>
-            <li><a href="portfolio-cv.html">EXPERIENCE</a></li>
-            <li><a href="portfolio-cv.html">RESUME</a></li>
-            <li><a href="#works-section">WORKS</a></li>
+            <li><a href="#">overview</a></li>
+            <li><a href="#experience-section">experience</a></li>
+            <li><a href="assets/pdf/CV - A4.pdf" target="_blank">resume</a></li>
+            <li><a href="#works-section">works</a></li>
         </ul>
     </div>
 
-    <!-- Burger Icon (visible on mobile via CSS) -->
-    <label for="click" class="menu-btn">
-        <i class="fas fa-bars"></i>
-    </label>
-    <input type="checkbox" id="click">
+
 </nav>
 
     <!-- NEW HERO SECTION -->
-    <div class="hero-split">
+    <div id="overview-section"  class="hero-split">
         <!-- LEFT DIV: Image -->
         <div class="hero-left">
             <!-- I used a placeholder from your assets. Change src to your cassette image! -->
@@ -68,8 +64,8 @@
             </p>
 
             <div class="hero-buttons">
-              <button class="btn">Curriculum Vitae</button>
-              <button class="butn">Linkedin</button>
+            <a href="assets/pdf/CV - A4.pdf" target="_blank"><button class="btn">Curriculum Vitae</button></a>
+            <a href=" https://www.linkedin.com/in/frederic-steegmans-0844b529b/" target="_blank"><button class="butn">Linkedin</button></a>
             </div>
         </div>
     </div>
@@ -78,7 +74,7 @@
         <img src="assets/fingy.png" alt="fingy">
     </div>
 
-    <section class="value-section">
+    <section id="experience-section" class="value-section">
 
     <h2 class="value-title">WHAT DO YOU GET?</h2>
 
@@ -93,9 +89,9 @@
         I love to go camping and enjoy lots of kinds of physical activities to stay healthy and happy.
     </p>
 
-    <div class="value-image-wrap">
-        <img src="assets/blucd.png" alt="Portfolio Overview">
-    </div>
+ <div class="value-image-wrap">
+    <img src="assets/blucd.png" alt="Portfolio Overview" onclick="openModal(this)" class="clickable-img">
+</div>
 
 </section>
 
@@ -131,24 +127,45 @@
 
 <script>
     function openModal(element) {
-        var style = element.currentStyle || window.getComputedStyle(element, false);
-        var bi = style.backgroundImage.slice(4, -1).replace(/"/g, "");
-        
         var modal = document.getElementById("lightboxModal");
         var modalImg = document.getElementById("lightboxImg");
+        var imageSource;
+
+        // Check if the clicked element is an <img> tag or a div with background-image
+        if (element.tagName === 'IMG') {
+            imageSource = element.src;
+        } else {
+            // Existing logic for div background-images
+            var style = element.currentStyle || window.getComputedStyle(element, false);
+            imageSource = style.backgroundImage.slice(4, -1).replace(/"/g, "");
+        }
         
         modal.style.display = "flex";
         modal.style.alignItems = "center";
         modal.style.justifyContent = "center";
-        modalImg.src = bi;
+        modalImg.src = imageSource;
     }
 
     function closeModal() {
         document.getElementById("lightboxModal").style.display = "none";
     }
 
+    // Close modal when clicking strictly outside the image
+    document.getElementById("lightboxModal").addEventListener('click', function(e) {
+        if (e.target === this) {
+            closeModal();
+        }
+    });
+
     document.addEventListener('keydown', function(event) {
         if (event.key === "Escape") { closeModal(); }
+    });
+
+      // Scroll Event for Sticky Header
+    window.addEventListener("scroll", function() {
+        var header = document.querySelector("nav");
+        // If scrolled down more than 50px, add the class
+        header.classList.toggle("scrolled", window.scrollY > 50);
     });
 </script>
 

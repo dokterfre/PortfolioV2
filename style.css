@@ -22,16 +22,22 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 4rem;
+    padding: 3rem 4rem; /* Initial large padding */
     width: 100%;
     
+    /* FIX THE HEADER TO TOP */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensure it stays on top of images */
+    transition: all 0.4s ease; /* Smooth transition for background/padding */
+    background-color: transparent; /* Start transparent */
 }
 
-.logo img {
-    width: 5rem;
-}
+/* This class is added via JS when scrolling */
 
-/* Menu Links */
+
+/* Ensure Nav Links behave in fixed header */
 nav ul {
     display: flex;
     list-style: none;
@@ -40,7 +46,6 @@ nav ul {
     left: 50%;
     transform: translateX(-50%);
 }
-
 nav ul li a {
     color: #000;
     text-decoration: none;
@@ -54,7 +59,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #ff82ea;
+    color: #fc34da;
 }
 
 nav ul li a::after {
@@ -80,25 +85,36 @@ nav ul li a:hover::after {
 #click {
     display: none;
 }
+nav.scrolled {
+    background-color: rgba(255, 255, 255, 0.692);
+    padding: 1.5rem 4rem 3rem 4rem;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    backdrop-filter: blur(10px);
+}
 
 /* --- HERO SECTION (Full Width) --- */
 .hero-split {
     display: flex;
     align-items: center;
-    width: 90vw;
+    width: 90%;
     min-height: 70vh;
-    margin:0 auto;
-    margin-top: 4rem;
+    margin: 0 auto;
+    
+    /* INCREASED MARGIN-TOP to prevent nav covering the text */
+    /* Old value was 4rem, bump it to approx 10rem or 12rem */
+    margin-top: 12rem; 
+    
     margin-bottom: 2rem;
+    gap: 3rem;
 }
 
 /* LEFT SIDE: IMAGE */
 .hero-left {
-    flex: 1;
+    flex: 1; /* Takes up equal space */
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-right: 5rem;
+    /* Removed the large padding-right: 5rem; use gap instead */
     height: 100%;
 }
 
@@ -106,8 +122,7 @@ nav ul li a:hover::after {
     width: 100%;
     height: auto;
     filter: drop-shadow(10px 20px 20px rgba(0, 0, 0, 0.25));
-    /* REMOVED ROTATION HERE */
-    transform: none;
+    object-fit: contain;
 }
 
 /* VERTICAL DIVIDER */
@@ -115,16 +130,17 @@ nav ul li a:hover::after {
     width: 2px;
     height: 45vh;
     background-color: #000;
-    flex-shrink: 0;
+    flex-shrink: 0; /* Ensures line doesn't disappear when shrinking */
 }
 
 /* RIGHT SIDE: TEXT */
 .hero-right {
-    flex: 1;
+    flex: 1; /* Takes up equal space */
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-left: clamp(1.5rem, 5vw, 5rem);
+    /* Removed padding-left clamp to let Gap handle spacing */
+    padding-left: 0; 
 }
 
 .hero-sub-top {
@@ -258,41 +274,45 @@ nav ul li a:hover::after {
     padding: 2rem 0 2rem 0;
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: flex-end; /* Aligns text to bottom of container */
     border-bottom: 3px solid black;
     margin-top: 5rem;
-
+    flex-wrap: wrap; /* Allows wrapping on medium screens */
+    gap: 2rem; /* Adds space when they wrap */
 }
 
 .works-header h2 {
-    font-family: "Archivo Condensed", sans-serif;
+    font-family: 'Oswald', sans-serif;
     font-weight: 900;
-    font-size: 7rem;
-    line-height: 1;
+    /* responsive font size: minimum 3.5rem, preferred 10vw, maximum 7rem */
+    font-size: clamp(3.5rem, 10vw, 7rem); 
+    line-height: 0.9;
     letter-spacing: -2px;
     color: black;
-    font-family: 'Oswald', sans-serif;
 }
 
 .works-contact {
     text-align: right;
 }
 
+.works-contact a,
+.works-contact span {
+    font-family: "Archivo Condensed", sans-serif;
+    font-weight: 800;
+    /* responsive font size for contact info */
+    font-size: clamp(1rem, 2vw, 1.4rem); 
+    display: block;
+    text-transform: uppercase;
+    line-height: 1.4;
+}
+
 .works-contact a {
     color: #ff82ea;
     text-decoration: none;
-    font-family: "Archivo Condensed", sans-serif;
-    font-weight: 800;
-    font-size: 20pt;
-    display: block;
-    text-transform: uppercase;
 }
 
 .works-contact span {
     color: black;
-    font-family: "Archivo Condensed", sans-serif;
-    font-weight: 800;
-    font-size: 20pt;
     letter-spacing: 1px;
 }
 
@@ -478,14 +498,15 @@ nav ul li a:hover::after {
     }
 
     .works-header {
-        padding: 2rem 2rem;
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: column; /* Stack vertically */
+        align-items: flex-start; /* Align everything to the left */
+        justify-content: center;
+        padding: 2rem 0; /* Remove side padding, let width:97% handle it */
         gap: 1rem;
     }
 
     .works-contact {
-        text-align: left;
+        text-align: left; /* Switch text alignment to left */
     }
 }
 
@@ -496,7 +517,7 @@ nav ul li a:hover::after {
     }
 
     .value-sub {
-        font-size: 1.1rem;
+        font-size: 1.5rem;
     }
 
     .value-text {
@@ -539,6 +560,19 @@ nav ul li a:hover::after {
         max-width: 260px;
         text-align: center;
     }
+     .works-header {
+        align-items: center; /* Center align on very small screens */
+        text-align: center;
+    }
+
+    .works-contact {
+        text-align: center;
+    }
+    
+    .works-header h2 {
+        /* Even smaller font for mobile phones if needed */
+        font-size: 3.5rem; 
+    }
 }
 
 
@@ -546,7 +580,8 @@ a:hover,
 button:hover,
 .btn:hover,
 .butn:hover,
-.image-box:hover {
+.image-box:hover,
+.value-image-wrap img:hover {   /* <--- Added this line */
     cursor: url("assets/pointerold.cur"),
             url("assets/pointerold.png") 16 16,
             pointer !important;
