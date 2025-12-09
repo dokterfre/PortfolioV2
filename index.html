@@ -20,23 +20,19 @@
 <main>
 
     <nav>
+        <div class="nav-center">
+            <ul>
+                <li><a href="#">overview</a></li>
+                <li><a href="#experience-section">experience</a></li>
+                <li><a href="assets/pdf/CV - A4.pdf" target="_blank">resume</a></li>
+                <li><a href="#works-section">works</a></li>
+            </ul>
+        </div>
+    </nav>
 
-
-    <div class="nav-center">
-        <ul>
-            <li><a href="#">overview</a></li>
-            <li><a href="#experience-section">experience</a></li>
-            <li><a href="assets/pdf/CV - A4.pdf" target="_blank">resume</a></li>
-            <li><a href="#works-section">works</a></li>
-        </ul>
-    </div>
-
-
-</nav>
-
-    <div id="overview-section"  class="hero-split">
+    <div id="overview-section" class="hero-split">
         <div class="hero-left">
-            <img src="assets/cas.png" alt="Hero Image"> 
+            <img src="assets/cas.png" alt="Frederic Steegmans portrait" loading="eager"> 
         </div> 
         <div class="hero-line"></div>
         <div class="hero-right">
@@ -50,68 +46,68 @@
             </p>
 
             <div class="hero-buttons">
-            <a href="assets/pdf/CV - A4.pdf" target="_blank"><button class="btn">Curriculum Vitae</button></a>
-            <a href=" https://www.linkedin.com/in/frederic-steegmans-0844b529b/" target="_blank"><button class="butn">Linkedin</button></a>
+                <a href="assets/pdf/CV - A4.pdf" target="_blank"><button class="btn">Curriculum Vitae</button></a>
+                <a href="https://www.linkedin.com/in/frederic-steegmans-0844b529b/" target="_blank"><button class="butn">Linkedin</button></a>
             </div>
         </div>
     </div>
 
     <div class="fingy">
-        <img src="assets/fingy.png" alt="fingy">
+        <img src="assets/fingy.png" alt="Decorative finger icon" loading="lazy">
     </div>
 
     <section id="experience-section" class="value-section">
+        <h2 class="value-title">WHAT DO YOU GET?</h2>
 
-    <h2 class="value-title">WHAT DO YOU GET?</h2>
+        <h3 class="value-sub">
+            A LITTLE BIT OF <span>THIS</span>, A LITTLE BIT OF <span>THAT</span>
+        </h3>
 
-    <h3 class="value-sub">
-        A LITTLE BIT OF <span>THIS</span>, A LITTLE BIT OF <span>THAT</span>
-    </h3>
+        <p class="value-text">
+            As a digital designer I have a profound knowledge in frontend development, branding, design, marketing and more.
+            However, my interests span wide and far. After working as a sound engineering student to satisfy my love for music,
+            being a DJ and producing. I have a background in science which I only use for fun facts and critical thinking.
+            I love to go camping and enjoy lots of kinds of physical activities to stay healthy and happy.
+        </p>
 
-    <p class="value-text">
-        As a digital designer I have a profound knowledge in frontend development, branding, design, marketing and more.
-        However, my interests span wide and far. After working as a sound engineering student to satisfy my love for music,
-        being a DJ and producing. I have a background in science which I only use for fun facts and critical thinking.
-        I love to go camping and enjoy lots of kinds of physical activities to stay healthy and happy.
-    </p>
+        <div class="value-image-wrap">
+            <img src="assets/blucd.png" alt="Portfolio overview showcase" loading="lazy" onclick="openModal(this)" style="cursor: pointer;">
+        </div>
+    </section>
 
- <div class="value-image-wrap">
-    <img src="assets/blucd.png" alt="Portfolio Overview" onclick="openModal(this)" class="clickable-img">
-</div>
-
-</section>
-
-
-   <div id="works-section" class="works-header">
-    <h2>WORKS</h2>
-    <div class="works-contact">
-        <a href="#" class="copy-trigger">CONTACT ME</a>
-        <span class="copy-trigger">FREDERICSTEEGMANS@GMAIL.COM</span>
+    <div id="works-section" class="works-header">
+        <h2>WORKS</h2>
+        <div class="works-contact">
+            <a href="#" class="copy-trigger">CONTACT ME</a>
+            <span class="copy-trigger">FREDERICSTEEGMANS@GMAIL.COM</span>
+        </div>
     </div>
-</div>
    
     <div class="works">
-        <div class="image-box" style="background-image: url('assets/p4.png');" onclick="openModal(this)"></div>
-        <div class="image-box" style="background-image: url('assets/blik.png');" onclick="openModal(this)"></div>
-        <div class="image-box" style="background-image: url('assets/tinyhouse7.png');" onclick="openModal(this)"></div>
-        <div class="image-box" style="background-image: url('assets/tinyhouse5.png');" onclick="openModal(this)"></div>
-        <div class="image-box" style="background-image: url('assets/stylo3.png');" onclick="openModal(this)"></div>
-        <div class="image-box" style="background-image: url('assets/stylo1.png');" onclick="openModal(this)"></div>
-        <div class="image-box" style="background-image: url('assets/sandbox1.png');" onclick="openModal(this)"></div>
-        <div class="image-box" style="background-image: url('assets/sand-thumb.png');" onclick="openModal(this)"></div>
-        <div class="image-box" style="background-image: url('assets/sandbox2.png');" onclick="openModal(this)"></div>
-        <div class="image-box" style="background-image: url('assets/roof.jpg');" onclick="openModal(this)"></div>
-        <div class="image-box" style="background-image: url('assets/krono.png');" onclick="openModal(this)"></div>
-        <div class="image-box" style="background-image: url('assets/intr.jpg');" onclick="openModal(this)"></div>
-        <div class="image-box" style="background-image: url('assets/papa.jpeg');" onclick="openModal(this)"></div>
-        <div class="image-box" style="background-image: url('assets/duivel.png');" onclick="openModal(this)"></div>
-        <div class="image-box" style="background-image: url('assets/doc.png');" onclick="openModal(this)"></div>
-
+        <div class="image-box loading" data-src="assets/p4.png" data-alt="Portfolio work sample"></div>
+        <div class="image-box loading" data-src="assets/blik.png" data-alt="Design project showcase"></div>
+        <div class="image-box loading" data-src="assets/tinyhouse7.png" data-alt="Tiny house design work"></div>
+        <div class="image-box loading" data-src="assets/tinyhouse5.png" data-alt="Tiny house interior design"></div>
+        <div class="image-box loading" data-src="assets/celebri1.jpg" data-alt="Creative design work"></div>
+        <div class="image-box loading" data-src="assets/celebri2.jpg" data-alt="Brand design project"></div>
+        <div class="image-box loading" data-src="assets/celebri3.jpg" data-alt="Visual design showcase"></div>
+        <div class="image-box loading" data-src="assets/celebri4.jpg" data-alt="Marketing design work"></div>
+        <div class="image-box loading" data-src="assets/stylo3.png" data-alt="Typography design project"></div>
+        <div class="image-box loading" data-src="assets/stylo1.png" data-alt="Style design showcase"></div>
+        <div class="image-box loading" data-src="assets/sandbox1.png" data-alt="Sandbox creative work"></div>
+        <div class="image-box loading" data-src="assets/sand-thumb.png" data-alt="Sandbox project thumbnail"></div>
+        <div class="image-box loading" data-src="assets/sandbox2.png" data-alt="Sandbox design variation"></div>
+        <div class="image-box loading" data-src="assets/roof.jpg" data-alt="Architectural design work"></div>
+        <div class="image-box loading" data-src="assets/krono.png" data-alt="Krono project design"></div>
+        <div class="image-box loading" data-src="assets/intr.jpg" data-alt="Interior design project"></div>
+        <div class="image-box loading" data-src="assets/papa.jpeg" data-alt="Photography work"></div>
+        <div class="image-box loading" data-src="assets/duivel.png" data-alt="Illustration design work"></div>
+        <div class="image-box loading" data-src="assets/doc.png" data-alt="Document design project"></div>
     </div>
     
     <div id="lightboxModal" class="modal" onclick="closeModal()">
         <span class="close" onclick="closeModal()">&times;</span>
-        <img class="modal-content" id="lightboxImg">
+        <img class="modal-content" id="lightboxImg" alt="Portfolio work enlarged view">
     </div>
 
     <div id="notification-toast">Email copied to clipboard!</div>
@@ -119,16 +115,51 @@
 </main>
 
 <script>
+    // Lazy loading for portfolio images
+    const imageBoxes = document.querySelectorAll('.image-box[data-src]');
+    
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const box = entry.target;
+                const imgSrc = box.getAttribute('data-src');
+                
+                // Preload the image
+                const img = new Image();
+                img.onload = () => {
+                    box.style.backgroundImage = `url('${imgSrc}')`;
+                    box.classList.remove('loading');
+                };
+                img.src = imgSrc;
+                
+                observer.unobserve(box);
+            }
+        });
+    }, {
+        rootMargin: '50px' // Start loading 50px before element is visible
+    });
+    
+    imageBoxes.forEach(box => {
+        imageObserver.observe(box);
+        
+        // Add click handler
+        box.addEventListener('click', function() {
+            openModal(this);
+        });
+    });
+
     function openModal(element) {
         var modal = document.getElementById("lightboxModal");
         var modalImg = document.getElementById("lightboxImg");
         var imageSource;
+        
         if (element.tagName === 'IMG') {
             imageSource = element.src;
+            modalImg.alt = element.alt;
         } else {
-    
             var style = element.currentStyle || window.getComputedStyle(element, false);
             imageSource = style.backgroundImage.slice(4, -1).replace(/"/g, "");
+            modalImg.alt = element.getAttribute('data-alt') || 'Portfolio work';
         }
         
         modal.style.display = "flex";
@@ -153,10 +184,12 @@
 
     window.addEventListener("scroll", function() {
         var header = document.querySelector("nav");
-        header.classList.toggle("scrolled", window.scrollY > 50);
+        if (header) {
+            header.classList.toggle("scrolled", window.scrollY > 50);
+        }
     });
 
-     const copyTriggers = document.querySelectorAll('.copy-trigger');
+    const copyTriggers = document.querySelectorAll('.copy-trigger');
     const toast = document.getElementById("notification-toast");
     const emailToCopy = "fredericsteegmans@gmail.com";
 
