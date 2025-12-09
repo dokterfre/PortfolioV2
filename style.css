@@ -245,6 +245,23 @@
             transform: rotate(90deg);
         }
 
+         .smiley {
+            height: 50vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem 0;
+            margin: 9rem auto;
+        }
+
+        .smiley img {
+            max-height: 15%;
+            max-width: 100px;
+            width: auto;
+            height: auto;
+        
+        }
+
         .value-section {
             width: 97%;
             margin: 0 auto;
