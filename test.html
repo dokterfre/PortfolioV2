@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Frederic Steegmans - Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Condensed:wght@400;500;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #0a0a0a;
+            color: #fff;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            padding: 1rem 0;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .nav-center ul {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            list-style: none;
+        }
+
+        .nav-center a {
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        .nav-center a:hover {
+            color: #4a9eff;
+        }
+
+        main {
+            padding-top: 80px;
+        }
+
+        .hero-split {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 3rem;
+            padding: 4rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            align-items: center;
+        }
+
+        .hero-left img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 8px;
+        }
+
+        .hero-line {
+            width: 2px;
+            height: 400px;
+            background: linear-gradient(to bottom, transparent, #4a9eff, transparent);
+        }
+
+        .hero-right {
+            max-width: 600px;
+        }
+
+        .hero-sub-top {
+            color: #4a9eff;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-family: 'Archivo Condensed', sans-serif;
+            font-size: 4rem;
+            font-weight: 900;
+            line-height: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .hero-desc {
+            line-height: 1.8;
+            color: #bbb;
+            margin-bottom: 2rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn, .butn {
+            padding: 1rem 2rem;
+            border: 2px solid #4a9eff;
+            background: transparent;
+            color: #fff;
+            cursor: pointer;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+        }
+
+        .btn:hover {
+            background: #4a9eff;
+        }
+
+        .butn {
+            border-color: #fff;
+        }
+
+        .butn:hover {
+            background: #fff;
+            color: #0a0a0a;
+        }
+
+        .fingy {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .fingy img {
+            width: 60px;
+            opacity: 0.5;
+        }
+
+        .value-section {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .value-title {
+            font-family: 'Archivo Condensed', sans-serif;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .value-sub {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .value-sub span {
+            color: #4a9eff;
+        }
+
+        .value-text {
+            line-height: 1.8;
+            color: #bbb;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+        }
+
+        .value-image-wrap img {
+            width: 100%;
+            max-width: 900px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .value-image-wrap img:hover {
+            transform: scale(1.02);
+        }
+
+        .works-header {
+            max-width: 1400px;
+            margin: 6rem auto 3rem;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .works-header h2 {
+            font-family: 'Archivo Condensed', sans-serif;
+            font-size: 3rem;
+        }
+
+        .works-contact {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 0.5rem;
+        }
+
+        .copy-trigger {
+            color: #4a9eff;
+            cursor: pointer;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .copy-trigger:hover {
+            color: #fff;
+        }
+
+        .works {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .image-box, .video-box {
+            aspect-ratio: 1;
+            background-size: cover;
+            background-position: center;
+            cursor: pointer;
+            transition: transform 0.3s, opacity 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .image-box.loading {
+            background: #1a1a1a;
+        }
+
+        .image-box:hover, .video-box:hover {
+            transform: scale(1.05);
+        }
+
+        .video-box {
+            background: #000;
+            border: none;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .video-box::after {
+            content: '▶';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3rem;
+            color: rgba(255, 255, 255, 0.8);
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+        }
+
+        .video-box:not([playing])::after {
+            opacity: 1;
+        }
+
+        .video-box:hover::after {
+            color: #4a9eff;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            margin: auto;
+        }
+
+        .close {
+            position: absolute;
+            top: 2rem;
+            right: 3rem;
+            color: #fff;
+            font-size: 3rem;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 2001;
+        }
+
+        .close:hover {
+            color: #4a9eff;
+        }
+
+        #notification-toast {
+            visibility: hidden;
+            min-width: 250px;
+            background-color: #4a9eff;
+            color: #fff;
+            text-align: center;
+            border-radius: 4px;
+            padding: 1rem;
+            position: fixed;
+            z-index: 3000;
+            left: 50%;
+            bottom: 30px;
+            transform: translateX(-50%);
+        }
+
+        #notification-toast.show {
+            visibility: visible;
+            animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        }
+
+        @keyframes fadein {
+            from {bottom: 0; opacity: 0;}
+            to {bottom: 30px; opacity: 1;}
+        }
+
+        @keyframes fadeout {
+            from {bottom: 30px; opacity: 1;}
+            to {bottom: 0; opacity: 0;}
+        }
+
+        @media (max-width: 768px) {
+            .hero-split {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-line {
+                display: none;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .works {
+                grid-template-columns: 1fr;
+            }
+
+            .works-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<main>
+
+    <nav>
+        <div class="nav-center">
+            <ul>
+                <li><a href="#">overview</a></li>
+                <li><a href="#experience-section">experience</a></li>
+                <li><a href="assets/pdf/CV - A4.pdf" target="_blank">resume</a></li>
+                <li><a href="#works-section">works</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="overview-section" class="hero-split">
+        <div class="hero-left">
+            <img src="assets/cas.png" alt="Frederic Steegmans portrait" loading="eager"> 
+        </div> 
+        <div class="hero-line"></div>
+        <div class="hero-right">
+            <div class="hero-sub-top">Digital Designer • Audio Engineer • Frontend Developer</div>
+            <h1>FREDERIC<br>MIGUEL<br>STEEGMANS</h1>
+            
+            <p class="hero-desc">
+                Hi. I'm Frederic, a digital designer / audio engineer from Belgium.
+                If I sent this website to you, it means that I am looking for new opportunities
+                in my professional career. Thank you for taking the time.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="assets/pdf/CV - A4.pdf" target="_blank"><button class="btn">Curriculum Vitae</button></a>
+                <a href="https://www.linkedin.com/in/frederic-steegmans-0844b529b/" target="_blank"><button class="butn">Linkedin</button></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="fingy">
+        <img src="assets/fingy.png" alt="Decorative finger icon" loading="lazy">
+    </div>
+
+    <section id="experience-section" class="value-section">
+        <h2 class="value-title">WHAT DO YOU GET?</h2>
+
+        <h3 class="value-sub">
+            A LITTLE BIT OF <span>THIS</span>, A LITTLE BIT OF <span>THAT</span>
+        </h3>
+
+        <p class="value-text">
+            As a digital designer I have a profound knowledge in frontend development, branding, design, marketing and more.
+            However, my interests span wide and far. After working as a sound engineering student to satisfy my love for music,
+            being a DJ and producing. I have a background in science which I only use for fun facts and critical thinking.
+            I love to go camping and enjoy lots of kinds of physical activities to stay healthy and happy.
+        </p>
+
+        <div class="value-image-wrap">
+            <img src="assets/blucd.png" alt="Portfolio overview showcase" loading="lazy" onclick="openModal(this)" style="cursor: pointer;">
+        </div>
+    </section>
+
+    <div id="works-section" class="works-header">
+        <h2>WORKS</h2>
+        <div class="works-contact">
+            <a href="#" class="copy-trigger">CONTACT ME</a>
+            <span class="copy-trigger">FREDERICSTEEGMANS@GMAIL.COM</span>
+        </div>
+    </div>
+   
+    <div class="works">
+        <div class="image-box loading" data-src="assets/p4.png" data-alt="Portfolio work sample"></div>
+        <div class="image-box loading" data-src="assets/blik.png" data-alt="Design project showcase"></div>
+        
+        <!-- VIDEO EXAMPLE - Replace with your video file -->
+        <video class="video-box" poster="assets/video-thumbnail.jpg" muted loop playsinline
+               onclick="handleVideoClick(this)">
+            <source src="assets/demo-reel.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        
+        <div class="image-box loading" data-src="assets/tinyhouse7.png" data-alt="Tiny house design work"></div>
+        <div class="image-box loading" data-src="assets/tinyhouse5.png" data-alt="Tiny house interior design"></div>
+        <div class="image-box loading" data-src="assets/celebri1.jpg" data-alt="Creative design work"></div>
+        <div class="image-box loading" data-src="assets/celebri2.jpg" data-alt="Brand design project"></div>
+        <div class="image-box loading" data-src="assets/celebri3.jpg" data-alt="Visual design showcase"></div>
+        <div class="image-box loading" data-src="assets/celebri4.jpg" data-alt="Marketing design work"></div>
+        <div class="image-box loading" data-src="assets/stylo3.png" data-alt="Typography design project"></div>
+        <div class="image-box loading" data-src="assets/stylo1.png" data-alt="Style design showcase"></div>
+        <div class="image-box loading" data-src="assets/sandbox1.png" data-alt="Sandbox creative work"></div>
+        <div class="image-box loading" data-src="assets/sand-thumb.png" data-alt="Sandbox project thumbnail"></div>
+        <div class="image-box loading" data-src="assets/sandbox2.png" data-alt="Sandbox design variation"></div>
+        <div class="image-box loading" data-src="assets/roof.jpg" data-alt="Architectural design work"></div>
+        <div class="image-box loading" data-src="assets/krono.png" data-alt="Krono project design"></div>
+        <div class="image-box loading" data-src="assets/intr.jpg" data-alt="Interior design project"></div>
+        <div class="image-box loading" data-src="assets/papa.jpeg" data-alt="Photography work"></div>
+        <div class="image-box loading" data-src="assets/duivel.png" data-alt="Illustration design work"></div>
+        <div class="image-box loading" data-src="assets/doc.png" data-alt="Document design project"></div>
+    </div>
+    
+    <div id="lightboxModal" class="modal" onclick="closeModal()">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="lightboxImg" alt="Portfolio work enlarged view">
+    </div>
+
+    <div id="notification-toast">Email copied to clipboard!</div>
+
+</main>
+
+<script>
+    // Handle video click - play/pause toggle
+    function handleVideoClick(video) {
+        if (video.paused) {
+            video.play();
+            video.setAttribute('playing', 'true');
+        } else {
+            video.pause();
+            video.removeAttribute('playing');
+        }
+    }
+
+    // Lazy loading for portfolio images
+    const imageBoxes = document.querySelectorAll('.image-box[data-src]');
+    
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const box = entry.target;
+                const imgSrc = box.getAttribute('data-src');
+                
+                // Preload the image
+                const img = new Image();
+                img.onload = () => {
+                    box.style.backgroundImage = `url('${imgSrc}')`;
+                    box.classList.remove('loading');
+                };
+                img.src = imgSrc;
+                
+                observer.unobserve(box);
+            }
+        });
+    }, {
+        rootMargin: '50px'
+    });
+    
+    imageBoxes.forEach(box => {
+        imageObserver.observe(box);
+        
+        // Add click handler
+        box.addEventListener('click', function() {
+            openModal(this);
+        });
+    });
+
+    function openModal(element) {
+        var modal = document.getElementById("lightboxModal");
+        var modalImg = document.getElementById("lightboxImg");
+        var imageSource;
+        
+        if (element.tagName === 'IMG') {
+            imageSource = element.src;
+            modalImg.alt = element.alt;
+        } else {
+            var style = element.currentStyle || window.getComputedStyle(element, false);
+            imageSource = style.backgroundImage.slice(4, -1).replace(/"/g, "");
+            modalImg.alt = element.getAttribute('data-alt') || 'Portfolio work';
+        }
+        
+        modal.style.display = "flex";
+        modal.style.alignItems = "center";
+        modal.style.justifyContent = "center";
+        modalImg.src = imageSource;
+    }
+
+    function closeModal() {
+        document.getElementById("lightboxModal").style.display = "none";
+    }
+
+    document.getElementById("lightboxModal").addEventListener('click', function(e) {
+        if (e.target === this) {
+            closeModal();
+        }
+    });
+
+    document.addEventListener('keydown', function(event) {
+        if (event.key === "Escape") { closeModal(); }
+    });
+
+    window.addEventListener("scroll", function() {
+        var header = document.querySelector("nav");
+        if (header) {
+            header.classList.toggle("scrolled", window.scrollY > 50);
+        }
+    });
+
+    const copyTriggers = document.querySelectorAll('.copy-trigger');
+    const toast = document.getElementById("notification-toast");
+    const emailToCopy = "fredericsteegmans@gmail.com";
+
+    copyTriggers.forEach(trigger => {
+        trigger.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            navigator.clipboard.writeText(emailToCopy).then(function() {
+                showToast();
+            }).catch(function(err) {
+                console.error('Could not copy text: ', err);
+            });
+        });
+    });
+
+    function showToast() {
+        toast.className = "show";
+        setTimeout(function(){ 
+            toast.className = toast.className.replace("show", ""); 
+        }, 3000);
+    }
+</script>
+
+</body>
+</html>
