@@ -97,13 +97,15 @@
 
 
     <!-- WORKS SECTION -->
-    <div id="works-section" class="works-header">
-        <h2>WORKS</h2>
-        <div class="works-contact">
-            <a href="mailto:fredericsteegmans@gmail.com">CONTACT ME</a>
-            <span>FREDERICSTEEGMANS@GMAIL.COM</span>
-        </div>
+   <div id="works-section" class="works-header">
+    <h2>WORKS</h2>
+    <div class="works-contact">
+        <!-- Changed href to # and added class 'copy-trigger' -->
+        <a href="#" class="copy-trigger">CONTACT ME</a>
+        <!-- Added class 'copy-trigger' here too -->
+        <span class="copy-trigger">FREDERICSTEEGMANS@GMAIL.COM</span>
     </div>
+</div>
    
     <div class="works">
         <!-- Your grid items -->
@@ -122,6 +124,8 @@
         <span class="close" onclick="closeModal()">&times;</span>
         <img class="modal-content" id="lightboxImg">
     </div>
+
+    <div id="notification-toast">Email copied to clipboard!</div>
 
 </main>
 
@@ -167,6 +171,33 @@
         // If scrolled down more than 50px, add the class
         header.classList.toggle("scrolled", window.scrollY > 50);
     });
+
+     const copyTriggers = document.querySelectorAll('.copy-trigger');
+    const toast = document.getElementById("notification-toast");
+    const emailToCopy = "fredericsteegmans@gmail.com";
+
+    copyTriggers.forEach(trigger => {
+        trigger.addEventListener('click', function(e) {
+            e.preventDefault(); // Stop link from jumping to top or opening mail
+
+            // Copy to clipboard API
+            navigator.clipboard.writeText(emailToCopy).then(function() {
+                showToast();
+            }).catch(function(err) {
+                console.error('Could not copy text: ', err);
+            });
+        });
+    });
+
+    function showToast() {
+        // Add the "show" class to DIV
+        toast.className = "show";
+
+        // After 3 seconds, remove the show class
+        setTimeout(function(){ 
+            toast.className = toast.className.replace("show", ""); 
+        }, 3000);
+    }
 </script>
 
 </body>

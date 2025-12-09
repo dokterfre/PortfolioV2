@@ -86,7 +86,7 @@ nav ul li a:hover::after {
     display: none;
 }
 nav.scrolled {
-    background-color: rgba(255, 255, 255, 0.692);
+    background-color: rgba(255, 255, 255, 0.89);
     padding: 1.5rem 4rem 3rem 4rem;
     box-shadow: 0 5px 20px rgba(0,0,0,0.05);
     backdrop-filter: blur(10px);
@@ -231,7 +231,7 @@ nav.scrolled {
 }
 
 .btn:hover::after {
-  transform: scaleX(1.4) scaleY(1.6);
+  transform: scaleX(1.1) scaleY(1.3);
   opacity: 0;
 }
 
@@ -254,7 +254,7 @@ nav.scrolled {
 }
 
 .butn:hover::after {
-  transform: scaleX(1.4) scaleY(1.6);
+  transform: scaleX(1.1) scaleY(1.3);
   opacity: 0;
 }
 
@@ -585,4 +585,42 @@ button:hover,
     cursor: url("assets/pointerold.cur"),
             url("assets/pointerold.png") 16 16,
             pointer !important;
+}
+
+#notification-toast {
+    visibility: hidden; /* Hidden by default */
+    min-width: 250px;
+    background-color: #ff58fff8; /* Black background */
+    color: #ffffff; /* White text */
+    text-align: center;
+    border-radius: 5px;
+    padding: 16px;
+    position: fixed;
+    z-index: 3000; /* Sit on top of everything */
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%);
+    font-family: "Archivo Condensed", sans-serif;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    opacity: 0;
+    transition: opacity 0.5s, bottom 0.5s;
+    box-shadow: 0 5px 15px #7c127c8e;
+}
+
+/* Class to show the toast */
+#notification-toast.show {
+    visibility: visible;
+    opacity: 1;
+    bottom: 50px; /* Slight move up animation */
+}
+
+/* Make the span look clickable */
+.works-contact span.copy-trigger {
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.works-contact span.copy-trigger:hover {
+    color: #ff82ea; /* Hover pink like the link */
 }
