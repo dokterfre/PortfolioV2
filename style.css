@@ -17,27 +17,29 @@ body {
     width: 100%;
 }
 
-/* --- NAVIGATION --- */
+
+
+
+
+
 nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 3rem 4rem; /* Initial large padding */
+    padding: 3rem 4rem;
     width: 100%;
     
-    /* FIX THE HEADER TO TOP */
+  
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1000; /* Ensure it stays on top of images */
-    transition: all 0.4s ease; /* Smooth transition for background/padding */
-    background-color: transparent; /* Start transparent */
+    z-index: 1000; 
+    transition: all 0.4s ease; 
+    background-color: transparent; 
 }
 
-/* This class is added via JS when scrolling */
 
 
-/* Ensure Nav Links behave in fixed header */
 nav ul {
     display: flex;
     list-style: none;
@@ -77,14 +79,8 @@ nav ul li a:hover::after {
     width: 100%;
 }
 
-/* Mobile Menu Btn */
-.menu-btn {
-    display: none;
-}
 
-#click {
-    display: none;
-}
+
 nav.scrolled {
     background-color: rgba(255, 255, 255, 0.89);
     padding: 1.5rem 4rem 3rem 4rem;
@@ -92,29 +88,26 @@ nav.scrolled {
     backdrop-filter: blur(10px);
 }
 
-/* --- HERO SECTION (Full Width) --- */
+
+
+
 .hero-split {
     display: flex;
     align-items: center;
     width: 90%;
     min-height: 70vh;
     margin: 0 auto;
-    
-    /* INCREASED MARGIN-TOP to prevent nav covering the text */
-    /* Old value was 4rem, bump it to approx 10rem or 12rem */
     margin-top: 12rem; 
-    
     margin-bottom: 2rem;
     gap: 3rem;
 }
 
-/* LEFT SIDE: IMAGE */
+
 .hero-left {
-    flex: 1; /* Takes up equal space */
+    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* Removed the large padding-right: 5rem; use gap instead */
     height: 100%;
 }
 
@@ -125,21 +118,21 @@ nav.scrolled {
     object-fit: contain;
 }
 
-/* VERTICAL DIVIDER */
 .hero-line {
     width: 2px;
     height: 45vh;
     background-color: #000;
-    flex-shrink: 0; /* Ensures line doesn't disappear when shrinking */
+    flex-shrink: 0; 
 }
 
-/* RIGHT SIDE: TEXT */
+
+
+
 .hero-right {
-    flex: 1; /* Takes up equal space */
+    flex: 1; 
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* Removed padding-left clamp to let Gap handle spacing */
     padding-left: 0; 
 }
 
@@ -173,7 +166,8 @@ nav.scrolled {
 
 }
 
-/* From Uiverse.io by cssbuttons-io */ 
+
+
 .btn,
 .butn {
   position: relative;
@@ -267,24 +261,22 @@ nav.scrolled {
 
 
 
-/* --- WORKS HEADER --- */
 .works-header {
     width: 97%;
     margin: 0 auto;
     padding: 2rem 0 2rem 0;
     display: flex;
     justify-content: space-between;
-    align-items: flex-end; /* Aligns text to bottom of container */
+    align-items: flex-end; 
     border-bottom: 3px solid black;
     margin-top: 5rem;
-    flex-wrap: wrap; /* Allows wrapping on medium screens */
-    gap: 2rem; /* Adds space when they wrap */
+    flex-wrap: wrap; 
+    gap: 2rem;
 }
 
 .works-header h2 {
     font-family: 'Oswald', sans-serif;
     font-weight: 900;
-    /* responsive font size: minimum 3.5rem, preferred 10vw, maximum 7rem */
     font-size: clamp(3.5rem, 10vw, 7rem); 
     line-height: 0.9;
     letter-spacing: -2px;
@@ -299,7 +291,6 @@ nav.scrolled {
 .works-contact span {
     font-family: "Archivo Condensed", sans-serif;
     font-weight: 800;
-    /* responsive font size for contact info */
     font-size: clamp(1rem, 2vw, 1.4rem); 
     display: block;
     text-transform: uppercase;
@@ -316,7 +307,9 @@ nav.scrolled {
     letter-spacing: 1px;
 }
 
-/* --- WORKS GRID --- */
+
+
+
 .works {
     width: 100%;
    padding: 1.5rem;
@@ -329,7 +322,6 @@ nav.scrolled {
 
 .image-box {
     width: calc(33.333% - 1rem);
-    /* 3 Columns */
     aspect-ratio: 1 / 1;
     background-size: cover;
     background-position: center;
@@ -338,11 +330,11 @@ nav.scrolled {
 
 .image-box:hover {
     transform: scale(0.98);
-    /* Slight zoom on hover */
     z-index: 2;
 }
 
-/* Modal */
+
+
 .modal {
     display: none;
     position: fixed;
@@ -376,7 +368,7 @@ nav.scrolled {
     color: #ff82ea;
 }
 
-/* --- FINGY SECTION --- */
+
 .fingy {
     height: 30vh;
     display: flex;
@@ -395,11 +387,6 @@ nav.scrolled {
 
 
 
-
-
-/* =========================
-   VALUE SECTION (WHAT DO YOU GET)
-========================= */
 
 .value-section {
     width: 97%;
@@ -459,14 +446,13 @@ nav.scrolled {
         display: none;
     }
 
-    /* ✅ HARD KILL IMAGE + DIVIDER */
     .hero-left,
     .hero-left img,
     .hero-line {
         display: none !important;
     }
 
-    /* ✅ FORCE TEXT TO FULL WIDTH */
+
     .hero-split {
         display: flex;
         justify-content: center;
@@ -498,15 +484,15 @@ nav.scrolled {
     }
 
     .works-header {
-        flex-direction: column; /* Stack vertically */
-        align-items: flex-start; /* Align everything to the left */
+        flex-direction: column; 
+        align-items: flex-start; 
         justify-content: center;
-        padding: 2rem 0; /* Remove side padding, let width:97% handle it */
+        padding: 2rem 0;
         gap: 1rem;
     }
 
     .works-contact {
-        text-align: left; /* Switch text alignment to left */
+        text-align: left;
     }
 }
 
@@ -537,7 +523,6 @@ nav.scrolled {
     }
 }
 
-/* --- RESPONSIVE --- */
 
 
 @media (max-width: 600px) {
@@ -561,7 +546,7 @@ nav.scrolled {
         text-align: center;
     }
      .works-header {
-        align-items: center; /* Center align on very small screens */
+        align-items: center;
         text-align: center;
     }
 
@@ -570,7 +555,6 @@ nav.scrolled {
     }
     
     .works-header h2 {
-        /* Even smaller font for mobile phones if needed */
         font-size: 3.5rem; 
     }
 }
@@ -581,22 +565,22 @@ button:hover,
 .btn:hover,
 .butn:hover,
 .image-box:hover,
-.value-image-wrap img:hover {   /* <--- Added this line */
+.value-image-wrap img:hover { 
     cursor: url("assets/pointerold.cur"),
             url("assets/pointerold.png") 16 16,
             pointer !important;
 }
 
 #notification-toast {
-    visibility: hidden; /* Hidden by default */
+    visibility: hidden;
     min-width: 250px;
-    background-color: #ff58fff8; /* Black background */
-    color: #ffffff; /* White text */
+    background-color: #ff58fff8;
+    color: #ffffff;
     text-align: center;
     border-radius: 5px;
     padding: 16px;
     position: fixed;
-    z-index: 3000; /* Sit on top of everything */
+    z-index: 3000;
     left: 50%;
     bottom: 30px;
     transform: translateX(-50%);
@@ -608,19 +592,19 @@ button:hover,
     box-shadow: 0 5px 15px #7c127c8e;
 }
 
-/* Class to show the toast */
+
 #notification-toast.show {
     visibility: visible;
     opacity: 1;
-    bottom: 50px; /* Slight move up animation */
+    bottom: 50px;
 }
 
-/* Make the span look clickable */
+
 .works-contact span.copy-trigger {
     cursor: pointer;
     transition: color 0.3s ease;
 }
 
 .works-contact span.copy-trigger:hover {
-    color: #ff82ea; /* Hover pink like the link */
+    color: #ff82ea;
 }

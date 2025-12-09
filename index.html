@@ -4,12 +4,8 @@
     <meta charset="UTF-8">
     <title>Frederic Steegmans - Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-
-    <!-- Google Fonts: Added Oswald for the big bold text -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -20,9 +16,6 @@
 </head>
 
 <body>
-
-<!-- NAVIGATION -->
-
 
 <main>
 
@@ -41,18 +34,11 @@
 
 </nav>
 
-    <!-- NEW HERO SECTION -->
     <div id="overview-section"  class="hero-split">
-        <!-- LEFT DIV: Image -->
         <div class="hero-left">
-            <!-- I used a placeholder from your assets. Change src to your cassette image! -->
             <img src="assets/cas.png" alt="Hero Image"> 
-        </div>
-
-        <!-- DIVIDER LINE -->
+        </div> 
         <div class="hero-line"></div>
-
-        <!-- RIGHT DIV: Text & Buttons -->
         <div class="hero-right">
             <div class="hero-sub-top">Digital Designer • Audio Engineer • Frontend Developer</div>
             <h1>FREDERIC<br>MIGUEL<br>STEEGMANS</h1>
@@ -96,30 +82,33 @@
 </section>
 
 
-    <!-- WORKS SECTION -->
    <div id="works-section" class="works-header">
     <h2>WORKS</h2>
     <div class="works-contact">
-        <!-- Changed href to # and added class 'copy-trigger' -->
         <a href="#" class="copy-trigger">CONTACT ME</a>
-        <!-- Added class 'copy-trigger' here too -->
         <span class="copy-trigger">FREDERICSTEEGMANS@GMAIL.COM</span>
     </div>
 </div>
    
     <div class="works">
-        <!-- Your grid items -->
         <div class="image-box" style="background-image: url('assets/p4.png');" onclick="openModal(this)"></div>
-        <div class="image-box" style="background-image: url('assets/p5.png');" onclick="openModal(this)"></div>
-        <div class="image-box" style="background-image: url('assets/klock.png');" onclick="openModal(this)"></div>
-        <div class="image-box" style="background-image: url('assets/tinyhouse2.png');" onclick="openModal(this)"></div>
-        <div class="image-box" style="background-image: url('assets/tinyhouse3.png');" onclick="openModal(this)"></div>
-        <div class="image-box" style="background-image: url('assets/tinyhouse4.png');" onclick="openModal(this)"></div>
-        <!-- ... keeping the rest of your items implies they exist ... -->
-        <div class="image-box" style="background-image: url('assets/zalando2.png');" onclick="openModal(this)"></div>
+        <div class="image-box" style="background-image: url('assets/blik.png');" onclick="openModal(this)"></div>
+        <div class="image-box" style="background-image: url('assets/tinyhouse7.png');" onclick="openModal(this)"></div>
+        <div class="image-box" style="background-image: url('assets/tinyhouse5.png');" onclick="openModal(this)"></div>
+        <div class="image-box" style="background-image: url('assets/stylo3.png');" onclick="openModal(this)"></div>
+        <div class="image-box" style="background-image: url('assets/stylo1.png');" onclick="openModal(this)"></div>
+        <div class="image-box" style="background-image: url('assets/sandbox1.png');" onclick="openModal(this)"></div>
+        <div class="image-box" style="background-image: url('assets/sand-thumb.png');" onclick="openModal(this)"></div>
+        <div class="image-box" style="background-image: url('assets/sandbox2.png');" onclick="openModal(this)"></div>
+        <div class="image-box" style="background-image: url('assets/roof.jpg');" onclick="openModal(this)"></div>
+        <div class="image-box" style="background-image: url('assets/krono.png');" onclick="openModal(this)"></div>
+        <div class="image-box" style="background-image: url('assets/intr.jpg');" onclick="openModal(this)"></div>
+        <div class="image-box" style="background-image: url('assets/papa.jpeg');" onclick="openModal(this)"></div>
+        <div class="image-box" style="background-image: url('assets/duivel.png');" onclick="openModal(this)"></div>
+        <div class="image-box" style="background-image: url('assets/doc.png');" onclick="openModal(this)"></div>
+
     </div>
     
-    <!-- MODAL -->
     <div id="lightboxModal" class="modal" onclick="closeModal()">
         <span class="close" onclick="closeModal()">&times;</span>
         <img class="modal-content" id="lightboxImg">
@@ -134,12 +123,10 @@
         var modal = document.getElementById("lightboxModal");
         var modalImg = document.getElementById("lightboxImg");
         var imageSource;
-
-        // Check if the clicked element is an <img> tag or a div with background-image
         if (element.tagName === 'IMG') {
             imageSource = element.src;
         } else {
-            // Existing logic for div background-images
+    
             var style = element.currentStyle || window.getComputedStyle(element, false);
             imageSource = style.backgroundImage.slice(4, -1).replace(/"/g, "");
         }
@@ -154,7 +141,6 @@
         document.getElementById("lightboxModal").style.display = "none";
     }
 
-    // Close modal when clicking strictly outside the image
     document.getElementById("lightboxModal").addEventListener('click', function(e) {
         if (e.target === this) {
             closeModal();
@@ -165,10 +151,8 @@
         if (event.key === "Escape") { closeModal(); }
     });
 
-      // Scroll Event for Sticky Header
     window.addEventListener("scroll", function() {
         var header = document.querySelector("nav");
-        // If scrolled down more than 50px, add the class
         header.classList.toggle("scrolled", window.scrollY > 50);
     });
 
@@ -178,9 +162,8 @@
 
     copyTriggers.forEach(trigger => {
         trigger.addEventListener('click', function(e) {
-            e.preventDefault(); // Stop link from jumping to top or opening mail
+            e.preventDefault();
 
-            // Copy to clipboard API
             navigator.clipboard.writeText(emailToCopy).then(function() {
                 showToast();
             }).catch(function(err) {
@@ -190,10 +173,7 @@
     });
 
     function showToast() {
-        // Add the "show" class to DIV
         toast.className = "show";
-
-        // After 3 seconds, remove the show class
         setTimeout(function(){ 
             toast.className = toast.className.replace("show", ""); 
         }, 3000);
