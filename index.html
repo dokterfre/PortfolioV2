@@ -17,15 +17,20 @@
 
 <body>
 
+    <div id="page-loader">
+    <div class="loader-inner">LIFE IS A <span>GIFT</span></div>
+</div>
+
 <main>
 
     <nav>
         <div class="nav-center">
             <ul>
                 <li><a href="#">overview</a></li>
-                <li><a href="#experience-section">experience</a></li>
-                <li><a href="assets/pdf/CV - A4.pdf" target="_blank">resume</a></li>
+                <li><a href="#fingy-section">experience</a></li>
                 <li><a href="#works-section">works</a></li>
+                <li><a href="assets/pdf/CV - A4.pdf" target="_blank">resume</a></li>
+    
             </ul>
         </div>
     </nav>
@@ -52,11 +57,11 @@
         </div>
     </div>
 
-    <div class="fingy">
+    <div id="fingy-section" class="fingy">
         <img src="assets/fingy.png" alt="Decorative finger icon" loading="lazy">
     </div>
 
-    <section id="experience-section" class="value-section">
+    <section id="experience-section" class="value-section fade-section">
         <h2 class="value-title">WHAT DO YOU GET?</h2>
 
         <h3 class="value-sub">
@@ -75,7 +80,7 @@
         </div>
     </section>
 
-    <div id="works-section" class="works-header">
+    <div id="works-section" class="works-header fade-section">
         <h2>WORKS</h2>
         <div class="works-contact">
             <a href="#" class="copy-trigger">CONTACT ME</a>
@@ -253,6 +258,30 @@ function showToast() {
         toast.className = toast.className.replace("show", "");
     }, 3000);
 }
+
+const fadeSections = document.querySelectorAll(".fade-section");
+
+const fadeObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            fadeObserver.unobserve(entry.target); // animate only once
+        }
+    });
+}, {
+    threshold: 0.2
+});
+
+fadeSections.forEach(section => {
+    fadeObserver.observe(section);
+});
+
+window.addEventListener("load", () => {
+    setTimeout(() => {
+        document.getElementById("page-loader").classList.add("hidden");
+    }, 2000);
+});
+
 
 </script>
 
