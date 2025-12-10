@@ -76,7 +76,7 @@
         nav.scrolled {
             background-color: rgba(255, 255, 255, 0.077);
             padding: 1.5rem 4rem 3rem 4rem;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.173);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.116);
             backdrop-filter: blur(9px);
             border-radius: 0 0 10px 10px;
         }
