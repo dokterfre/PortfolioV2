@@ -198,18 +198,18 @@ function openModal(element) {
 
     const videoSrc = element.getAttribute("data-video");
 
-    // ✅ IF IT'S A VIDEO BOX
+
     if (videoSrc) {
         modalVideo.src = videoSrc;
         modalVideo.style.display = "block";
         modalVideo.play();
     } 
-    // ✅ IF IT'S A REAL <IMG> TAG (EXPERIENCE SECTION)
+  
     else if (element.tagName === "IMG") {
         modalImg.src = element.src;
         modalImg.style.display = "block";
     } 
-    // ✅ IF IT'S A BACKGROUND IMAGE BOX
+    
     else {
         const style = window.getComputedStyle(element);
         const imageSource = style.backgroundImage.slice(4, -1).replace(/"/g, "");
@@ -265,7 +265,7 @@ const fadeObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add("visible");
-            fadeObserver.unobserve(entry.target); // animate only once
+            fadeObserver.unobserve(entry.target);
         }
     });
 }, {
