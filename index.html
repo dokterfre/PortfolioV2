@@ -18,7 +18,7 @@
 <body>
 
     <div id="page-loader">
-    <div class="loader-inner">LIFE IS A <span>GIFT</span></div>
+    <div class="loader-inner">GET <span>READY</span></div>
 </div>
 
 <main>
@@ -198,18 +198,15 @@ function openModal(element) {
 
     const videoSrc = element.getAttribute("data-video");
 
-
     if (videoSrc) {
         modalVideo.src = videoSrc;
         modalVideo.style.display = "block";
         modalVideo.play();
     } 
-  
     else if (element.tagName === "IMG") {
         modalImg.src = element.src;
         modalImg.style.display = "block";
     } 
-    
     else {
         const style = window.getComputedStyle(element);
         const imageSource = style.backgroundImage.slice(4, -1).replace(/"/g, "");
@@ -277,13 +274,11 @@ fadeSections.forEach(section => {
 });
 
 window.addEventListener("load", () => {
-    setTimeout(() => {
-        document.getElementById("page-loader").classList.add("hidden");
-    }, 2000);
+    document.getElementById("page-loader").classList.add("hidden");
 });
 
-
 </script>
+
 
 
 </body>
