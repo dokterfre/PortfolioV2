@@ -199,10 +199,14 @@ function openModal(element) {
     const videoSrc = element.getAttribute("data-video");
 
     if (videoSrc) {
-        modalVideo.src = videoSrc;
-        modalVideo.style.display = "block";
-        modalVideo.play();
-    } 
+    modalVideo.pause();
+    modalVideo.removeAttribute("src");
+
+    modalVideo.src = videoSrc;
+    modalVideo.load();
+    modalVideo.style.display = "block";
+    modalVideo.play();
+}
     else if (element.tagName === "IMG") {
         modalImg.src = element.src;
         modalImg.style.display = "block";
