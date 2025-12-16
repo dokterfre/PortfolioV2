@@ -273,8 +273,10 @@ fadeSections.forEach(section => {
     fadeObserver.observe(section);
 });
 
-window.addEventListener("load", () => {
-    document.getElementById("page-loader").classList.add("hidden");
+document.addEventListener("DOMContentLoaded", () => {
+    setTimeout(() => {
+        document.getElementById("page-loader").classList.add("hidden");
+    }, 300);
 });
 
 </script>
