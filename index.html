@@ -197,19 +197,6 @@
 </main>
 
 <script>
-const videoObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    const video = entry.target.querySelector('video');
-    if (!video) return;
-    if (entry.isIntersecting) {
-      video.play();
-    } else {
-      video.pause();
-    }
-  });
-}, { rootMargin: '100px' });
-
-document.querySelectorAll('.video-box').forEach(box => videoObserver.observe(box));
 
 const imageBoxes = document.querySelectorAll('.image-box');
 
@@ -238,6 +225,17 @@ imageBoxes.forEach(box => {
     });
 });
 
+const videoObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        const video = entry.target.querySelector('video');
+        if (!video) return;
+        if (entry.isIntersecting) {
+            video.play();
+        } else {
+            video.pause();
+        }
+    });
+}, { rootMargin: '100px' });
 
 function openModal(element) {
     const modal = document.getElementById("lightboxModal");
@@ -250,19 +248,16 @@ function openModal(element) {
     const videoSrc = element.getAttribute("data-video");
 
     if (videoSrc) {
-    modalVideo.pause();
-    modalVideo.removeAttribute("src");
-
-    modalVideo.src = videoSrc;
-    modalVideo.load();
-    modalVideo.style.display = "block";
-    modalVideo.play();
-}
-    else if (element.tagName === "IMG") {
+        modalVideo.pause();
+        modalVideo.removeAttribute("src");
+        modalVideo.src = videoSrc;
+        modalVideo.load();
+        modalVideo.style.display = "block";
+        modalVideo.play();
+    } else if (element.tagName === "IMG") {
         modalImg.src = element.src;
         modalImg.style.display = "block";
-    } 
-    else {
+    } else {
         const style = window.getComputedStyle(element);
         const imageSource = style.backgroundImage.slice(4, -1).replace(/"/g, "");
         modalImg.src = imageSource;
@@ -281,17 +276,14 @@ function closeModal() {
     modalVideo.src = "";
 }
 
-
 document.addEventListener('keydown', function(event) {
     if (event.key === "Escape") closeModal();
 });
-
 
 window.addEventListener("scroll", function() {
     const header = document.querySelector("nav");
     if (header) header.classList.toggle("scrolled", window.scrollY > 50);
 });
-
 
 const copyTriggers = document.querySelectorAll('.copy-trigger');
 const toast = document.getElementById("notification-toast");
@@ -332,6 +324,8 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => {
         document.getElementById("page-loader").classList.add("hidden");
     }, 300);
+
+    document.querySelectorAll('.video-box').forEach(box => videoObserver.observe(box));
 });
 
 </script>
