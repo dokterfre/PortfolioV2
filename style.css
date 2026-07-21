@@ -701,6 +701,7 @@ nav ul li a:hover,
 .audio-card {
     display: flex;
     flex-direction: column;
+    height: 100%;
 }
 
 /* fixed square, crops whatever image is dropped in so every card matches */
@@ -723,10 +724,16 @@ nav ul li a:hover,
     font-family: "Archivo Condensed", sans-serif;
     font-weight: 900;
     font-size: clamp(1.4rem, 2.4vw, 1.9rem);
+    line-height: 1.15;
     text-transform: uppercase;
     letter-spacing: -0.5px;
     text-align: center;
     margin-top: 1.3rem;
+    /* reserves room for 2 lines so 1-line and 2-line titles take equal space */
+    min-height: 2.3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .audio-card-subtext {
@@ -737,6 +744,16 @@ nav ul li a:hover,
     color: #666;
     text-align: center;
     margin-top: 0.4rem;
+    /* reserves room for 2 lines; longer text is clipped with an ellipsis
+       instead of pushing the card taller */
+    min-height: 2.8em;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    /* absorbs leftover vertical space so the player below always sits at
+       the same height across a row, regardless of title/subtext length */
+    margin-bottom: auto;
 }
 
 .audio-player {
