@@ -624,7 +624,20 @@
 }
 
 
+/* a:hover,
+button:hover,
+.image-box:hover,
+.video-box:hover,
+.copy-trigger:hover,
+nav ul li a:hover,
+.value-image-wrap img:hover,
+.close:hover {
+    cursor: url("assets/pointerold.png") 16 16, pointer !important;
+} */
 
+/* ==========================================
+   WORKS FILTER
+   ========================================== */
 
 .works-filters {
     width: 97%;
@@ -643,11 +656,11 @@
     letter-spacing: 1px;
     background-color: transparent;
     color: #000;
-    border: 3px solid #000;
+    border: 2px solid #000;
     padding: 0.6em 1.6em;
-    border-radius: 3rem;
+    border-radius: 6px;
     cursor: pointer;
-    transition: all 0.35s ease;
+    transition: all 0.25s ease;
 }
 
 .filter-btn:hover {
@@ -670,5 +683,154 @@
 @media (max-width: 600px) {
     .filter-btn {
         padding: 0.5em 1.2em;
+    }
+}
+
+/* ==========================================
+   AUDIO GRID
+   ========================================== */
+
+.audio-grid {
+    width: 97%;
+    margin: 3rem auto 6rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 3rem;
+}
+
+.audio-card {
+    display: flex;
+    flex-direction: column;
+}
+
+/* fixed square, crops whatever image is dropped in so every card matches */
+.audio-card-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    background-color: #f0f0f0;
+}
+
+.audio-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.audio-card-title {
+    font-family: "Archivo Condensed", sans-serif;
+    font-weight: 900;
+    font-size: clamp(1.4rem, 2.4vw, 1.9rem);
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+    text-align: center;
+    margin-top: 1.3rem;
+}
+
+.audio-card-subtext {
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    color: #666;
+    text-align: center;
+    margin-top: 0.4rem;
+}
+
+.audio-player {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.4rem;
+    border: 3px solid #000;
+    border-radius: 3rem;
+    padding: 0.4rem 1.3rem 0.4rem 0.4rem;
+    transition: border-color 0.25s ease;
+}
+
+.audio-player.playing {
+    border-color: #ff82ea;
+}
+
+.play-btn {
+    flex-shrink: 0;
+    width: 2.3rem;
+    height: 2.3rem;
+    border-radius: 50%;
+    border: none;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.25s ease, transform 0.2s ease;
+}
+
+.play-btn i {
+    font-size: 0.85rem;
+    margin-left: 2px;
+}
+
+.play-btn:hover {
+    background-color: #ff82ea;
+    transform: scale(1.05);
+}
+
+.audio-progress {
+    position: relative;
+    flex: 1;
+    height: 3px;
+    background-color: #000;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.audio-progress-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background-color: #000;
+    border-radius: 2px;
+    pointer-events: none;
+}
+
+.audio-player.playing .audio-progress-fill,
+.audio-player.playing .audio-progress-handle {
+    background-color: #ff82ea;
+}
+
+.audio-progress-handle {
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    width: 11px;
+    height: 11px;
+    background-color: #000;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.audio-duration {
+    flex-shrink: 0;
+    font-family: "Archivo Condensed", sans-serif;
+    font-weight: 800;
+    font-size: 0.95rem;
+    min-width: 2.4em;
+    text-align: right;
+}
+
+@media (max-width: 600px) {
+    .audio-grid {
+        gap: 2.5rem;
+    }
+
+    .audio-player {
+        padding: 0.35rem 1rem 0.35rem 0.35rem;
     }
 }
