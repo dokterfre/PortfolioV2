@@ -389,7 +389,7 @@
             display: flex;
             justify-content: space-between;
             align-items: flex-end; 
-            border-bottom: 3px solid black;
+            border-bottom: 4px solid black;
             margin-top: 5rem;
             flex-wrap: wrap; 
             gap: 2rem;
@@ -703,7 +703,7 @@
 
 .filter-btn {
     font-family: 'Inter', sans-serif;
-    font-weight: 800;
+    font-weight: 700;
     font-size: clamp(0.85rem, 1.4vw, 1.05rem);
     letter-spacing: -0.5px;
     background-color: transparent;
@@ -712,6 +712,9 @@
     padding: 0.6em 1.6em;
     border-radius: 2rem;
     transition: all 0.25s ease;
+}
+button {
+    font-family: 'Inter', sans-serif;
 }
 
 .filter-btn:hover {
@@ -736,9 +739,7 @@
     }
 }
 
-/* ==========================================
-   AUDIO GRID
-   ========================================== */
+
 
 .audio-grid {
     width: 97%;
