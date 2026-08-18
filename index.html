@@ -16,6 +16,7 @@
 </head>
 
 <body>
+    <div class="cursor-dot"></div>
 
     <div id="page-loader">
     <div class="loader-inner">GET <span>READY</span></div>
@@ -31,41 +32,32 @@
             <li><a href="#works-section">Works</a></li>
             <li><a href="#audio-section">Audio</a></li>
             <li><a href="assets/pdf/CV - A4.pdf" target="_blank">Resume</a></li>
+            <li><a href="https://www.linkedin.com/in/frederic-steegmans-0844b529b/" target="_blank">Linkedin</a></li>
         </ul>
     </div>
 </nav>
 
-    <div id="overview-section" class="hero-split">
-        <div class="hero-left">
-            <img src="assets/cas.png" alt="Frederic Steegmans portrait" loading="eager"> 
-        </div> 
-        <div class="hero-line"></div>
-        <div class="hero-right">
-            <div class="hero-sub-top">Digital Designer • Audio Engineer • Frontend Developer</div>
-            <h1>FREDERIC<br>MIGUEL<br>STEEGMANS</h1>
-            
-            <p class="hero-desc">
-                Hi. I'm Frederic, a digital designer / audio engineer from Belgium.
-                If I sent this website to you, it means that I am looking for new opportunities
-                in my professional career. Thank you for taking the time.
-            </p>
+<div id="header-hero">
+    <canvas id="blob-canvas"></canvas>
+    <div class="header-content">
+        <p>Hi. I'm Frederic, a Digital Creative from Belgium. I make content for media, entertainement and music.If I sent this website to you, it means that I am looking for new opportunities in my professional career. Thank you for taking the time.</p>
+    </div>
+</div>
 
-            <div class="hero-buttons">
-                <a href="assets/pdf/CV - A4.pdf" target="_blank"><button class="btn">Curriculum Vitae</button></a>
-                <a href="https://www.linkedin.com/in/frederic-steegmans-0844b529b/" target="_blank"><button class="butn">Linkedin</button></a>
-            </div>
+
+
+    <div id="fingy-section" class="fingy">
+      <!--  <img src="assets/fingy.png" alt="Decorative finger icon" loading="lazy"> -->
+        <div class="cas">
+            <img src="assets/cas.png" alt="Portfolio overview showcase" loading="lazy" ;">
         </div>
     </div>
 
-    <div id="fingy-section" class="fingy">
-        <img src="assets/fingy.png" alt="Decorative finger icon" loading="lazy">
-    </div>
-
     <section id="experience-section" class="value-section fade-section">
-        <h2 class="value-title">WHAT DO YOU GET?</h2>
+        <h2 class="value-title">What do you get?</h2>
 
         <h3 class="value-sub">
-            A LITTLE BIT OF <span>THIS</span>, A LITTLE BIT OF <span>THAT</span>
+            A little bit of <span>this</span>, a little bit of <span>that</span>
         </h3>
 
         <p class="value-text">
@@ -75,25 +67,21 @@
             I love to go camping and enjoy lots of kinds of physical activities to stay healthy and happy.
         </p>
 
-        <div class="value-image-wrap">
-            <img src="assets/blucd.png" alt="Portfolio overview showcase" loading="lazy" onclick="openModal(this)" style="cursor: pointer;">
-        </div>
     </section>
+
+ <div class="value-image-wrap">
+            <img src="assets/blucd.png" alt="Portfolio overview showcase" loading="lazy" ;">
+        </div>
 
     <div id="works-section" class="works-header fade-section">
         <h2>WORKS</h2>
         <div class="works-contact">
             <a href="#" class="copy-trigger">CONTACT ME</a>
-            <span class="copy-trigger">FREDERICSTEEGMANS@GMAIL.COM</span>
+            <span class="copy-trigger">fredericsteegmans@gmail.com</span>
         </div>
     </div>
 
-    <!--
-        FILTER BUTTONS
-        Categories were assigned quickly (mp4s = motion, images alternating
-        branding/content) as placeholders. Change any item's data-category
-        in the .works block below to correct it — no other edits needed.
-    -->
+    
     <div class="works-filters">
         <button class="filter-btn active" data-filter="all">All</button>
         <button class="filter-btn" data-filter="branding">Branding</button>
@@ -325,6 +313,133 @@
 </main>
 
 <script>
+    const cursorDot = document.querySelector('.cursor-dot');
+let cursorX = 0, cursorY = 0;
+
+window.addEventListener('mousemove', (e) => {
+    cursorX = e.clientX;
+    cursorY = e.clientY;
+    cursorDot.style.transform = `translate(${cursorX}px, ${cursorY}px) translate(-50%, -50%)`;
+});
+
+const hoverTargets = 'a, button, .filter-btn, .image-box, .play-btn, .copy-trigger, .close, input[type="submit"]';
+
+document.addEventListener('mouseover', (e) => {
+    if (e.target.closest(hoverTargets)) {
+        cursorDot.classList.add('hover');
+    }
+});
+
+document.addEventListener('mouseout', (e) => {
+    if (e.target.closest(hoverTargets)) {
+        cursorDot.classList.remove('hover');
+    }
+});
+
+// hide cursor when it leaves the window
+document.addEventListener('mouseleave', () => {
+    cursorDot.style.opacity = '0';
+});
+document.addEventListener('mouseenter', () => {
+    cursorDot.style.opacity = '1';
+});
+
+const canvas = document.getElementById('blob-canvas');
+const ctx = canvas.getContext('2d');
+let width, height;
+
+function resize() {
+    width = canvas.width = canvas.offsetWidth;
+    height = canvas.height = canvas.offsetHeight;
+}
+window.addEventListener('resize', resize);
+resize();
+
+const headerHero = document.getElementById('header-hero');
+
+function updateBlobOpacity() {
+    const heroHeight = headerHero.offsetHeight;
+    const fadeStart = heroHeight * 0.25;
+    const scrollY = window.scrollY;
+
+    let opacity = 1;
+    if (scrollY > fadeStart) {
+        opacity = 1 - (scrollY - fadeStart) / (heroHeight - fadeStart);
+        opacity = Math.max(0, Math.min(1, opacity));
+    }
+    canvas.style.opacity = opacity;
+}
+
+window.addEventListener('scroll', updateBlobOpacity);
+updateBlobOpacity();
+
+// mouse tracking
+let mouseX = width / 2;
+let mouseY = height / 2;
+window.addEventListener('mousemove', (e) => {
+    const rect = canvas.getBoundingClientRect();
+    mouseX = e.clientX - rect.left;
+    mouseY = e.clientY - rect.top;
+});
+
+const blobs = [
+    // strong followers (pink/magenta)
+    { x: width * 0.20, y: height * 0.30, r: 320, hue: 'rgba(255,110,205,0.32)', follow: 0.045, driftSpeed: 0.0005, driftAmt: 40, angle: 0 },
+    { x: width * 0.70, y: height * 0.55, r: 280, hue: 'rgba(230,120,255,0.28)', follow: 0.05,  driftSpeed: 0.0006, driftAmt: 30, angle: 1 },
+    { x: width * 0.45, y: height * 0.20, r: 260, hue: 'rgba(255,130,220,0.28)', follow: 0.038, driftSpeed: 0.0004, driftAmt: 35, angle: 2 },
+
+    // medium followers (purple)
+    { x: width * 0.85, y: height * 0.25, r: 300, hue: 'rgba(190,130,255,0.24)', follow: 0.02,  driftSpeed: 0.0005, driftAmt: 70, angle: 3 },
+    { x: width * 0.10, y: height * 0.70, r: 340, hue: 'rgba(255,120,190,0.24)', follow: 0.018, driftSpeed: 0.00045,driftAmt: 80, angle: 4 },
+    { x: width * 0.55, y: height * 0.80, r: 260, hue: 'rgba(210,130,250,0.24)', follow: 0.022, driftSpeed: 0.0006, driftAmt: 60, angle: 5 },
+
+    // barely-reactive driftier blobs (pink)
+    { x: width * 0.30, y: height * 0.85, r: 300, hue: 'rgba(255,140,210,0.2)',  follow: 0.004, driftSpeed: 0.0007, driftAmt: 110, angle: 6 },
+    { x: width * 0.05, y: height * 0.15, r: 220, hue: 'rgba(255,120,190,0.2)',  follow: 0.005, driftSpeed: 0.0006, driftAmt: 90,  angle: 8 },
+
+    // free-floating blue blobs — very low follow, mostly just drifting
+    { x: width * 0.92, y: height * 0.75, r: 260, hue: 'rgba(130,160,255,0.22)', follow: 0.002, driftSpeed: 0.0008, driftAmt: 120, angle: 7 },
+    { x: width * 0.65, y: height * 0.10, r: 280, hue: 'rgba(110,150,255,0.2)',  follow: 0.0015,driftSpeed: 0.00055,driftAmt: 130, angle: 9 },
+    { x: width * 0.35, y: height * 0.55, r: 240, hue: 'rgba(140,170,255,0.2)',  follow: 0.0018,driftSpeed: 0.0006, driftAmt: 100, angle: 10 },
+    { x: width * 0.15, y: height * 0.40, r: 220, hue: 'rgba(120,155,255,0.18)', follow: 0.001, driftSpeed: 0.0007, driftAmt: 115, angle: 11 },
+];
+
+function animate() {
+    ctx.clearRect(0, 0, width, height);
+    ctx.globalCompositeOperation = 'source-over';
+
+    const bg = ctx.createLinearGradient(0, 0, width, height);
+    bg.addColorStop(0, '#fffafd');
+    bg.addColorStop(1, '#fdf6fb');
+    ctx.fillStyle = bg;
+    ctx.fillRect(0, 0, width, height);
+
+    ctx.globalCompositeOperation = 'multiply';
+
+    blobs.forEach(b => {
+        b.x += (mouseX - b.x) * b.follow;
+        b.y += (mouseY - b.y) * b.follow;
+
+        b.angle += b.driftSpeed;
+        const dx = Math.cos(b.angle) * b.driftAmt;
+        const dy = Math.sin(b.angle) * b.driftAmt;
+
+        const grad = ctx.createRadialGradient(
+            b.x + dx, b.y + dy, 0,
+            b.x + dx, b.y + dy, b.r
+        );
+        grad.addColorStop(0, b.hue);
+        grad.addColorStop(1, 'rgba(255,255,255,0)');
+
+        ctx.fillStyle = grad;
+        ctx.beginPath();
+        ctx.arc(b.x + dx, b.y + dy, b.r, 0, Math.PI * 2);
+        ctx.fill();
+    });
+
+    requestAnimationFrame(animate);
+}
+animate();
 
 const imageBoxes = document.querySelectorAll('.image-box');
 
