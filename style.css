@@ -49,6 +49,45 @@
         }
         }
 
+        .cursor-dot-2 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 8px;
+    height: 8px;
+    background-color: #fff;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 99997;
+    mix-blend-mode: difference;
+    transform: translate(-50%, -50%);
+    will-change: transform;
+}
+
+.cursor-dot-3 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 5px;
+    background-color: #fff;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 99996;
+    mix-blend-mode: difference;
+    transform: translate(-50%, -50%);
+    will-change: transform;
+}
+
+    @media (hover: none) and (pointer: coarse) {
+    .cursor-dot-2,
+    .cursor-dot-3 {
+        display: none;
+    }
+    }
+
+    
+
         body {
             
             overflow-x: hidden;
@@ -165,6 +204,7 @@
         overflow: visible;
         background: transparent;
         }
+        
 
         #blob-canvas {
             position: fixed;
@@ -188,14 +228,84 @@
             padding: 0 2.5rem;
         }
         .header-content p {
-            font-family: 'Inter', sans-serif;
-            font-weight: 700;
-            font-size: 40pt;
-            letter-spacing: -0.02em;
-            color: #000000d8;
-            text-align: center;
-            letter-spacing: -2px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.6rem, 5vw, 3.2rem);
+    letter-spacing: -0.02em;
+    color: #000000d8;
+    text-align: center;
+    letter-spacing: -2px;
+}
+@media (max-width: 600px) {
+    .header-content {
+        padding: 0 1.5rem;
+    }
+}
+
+        .header-content p span{
+            font-weight: 900;
+            color: #967df1;
         }
+
+        .hero-carousel {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    max-width: 900px;
+    height: 90px;
+    overflow: hidden;
+    z-index: 2;
+    -webkit-mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 15%,
+        black 85%,
+        transparent 100%
+    );
+    mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 15%,
+        black 85%,
+        transparent 100%
+    );
+}
+
+.hero-carousel-track {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    width: max-content;
+    animation: scrollCarousel 28s linear infinite;
+}
+
+.hero-carousel-track img {
+    height: 90px;
+    width: 90px;
+    object-fit: cover;
+    border-radius: 0.75rem;
+    flex-shrink: 0;
+}
+
+@keyframes scrollCarousel {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+}
+
+@media (max-width: 600px) {
+    .hero-carousel {
+        width: 90%;
+        height: 60px;
+        bottom: 6%;
+    }
+    .hero-carousel-track img {
+        height: 60px;
+        width: 60px;
+    }
+}
+
 
 
          .smiley {
@@ -234,14 +344,13 @@
             color: #000000d8;
             text-align: center;
             letter-spacing: -2px;
-            transition: all 0.3s ease;
         }
 
         .value-sub {
             font-family: "Inter", sans-serif;
             font-weight: 700;
             color: #000000d7;
-            font-size: 27pt;
+            font-size: 33pt;
             margin-bottom: 1.5rem;
             line-height: 1;
             letter-spacing: -2px;
@@ -255,10 +364,10 @@
             margin: 0 auto 4rem auto;
             font-family: "Inter", sans-serif;
             font-weight: 400;
-            font-size: 13pt;
+            font-size: 17pt;
             line-height: 1.4;
             color: #111;
-            padding: 0 3rem;
+            padding: 0 1rem;
             letter-spacing: -1px;
         }
 
@@ -273,17 +382,7 @@
             object-fit: contain;
         }
 
-        .cas {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-        }
-
-        .cas img {
-            width: 85vw;
-            object-fit: contain;
-        }
-
+    
         .works-header {
             margin: 0 auto;
             padding: 2rem 1rem;

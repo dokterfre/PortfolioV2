@@ -17,6 +17,8 @@
 
 <body>
     <div class="cursor-dot"></div>
+    <div class="cursor-dot-2"></div>
+<div class="cursor-dot-3"></div>
 
     <div id="page-loader">
     <div class="loader-inner">GET <span>READY</span></div>
@@ -40,7 +42,7 @@
 <div id="header-hero">
     <canvas id="blob-canvas"></canvas>
     <div class="header-content">
-        <p>Hi. I'm Frederic, a Digital Creative from Belgium. I make content for media, entertainement and music.If I sent this website to you, it means that I am looking for new opportunities in my professional career. Thank you for taking the time.</p>
+        <p>Hi. I'm Frederic, a <span>Digital Creative</span> from Belgium. I make content for <span>media, entertainement and music</span>. If I sent this website to you, it means that I am looking for new opportunities in my professional career. Thank you for taking the time.</p>
     </div>
 </div>
 
@@ -48,9 +50,7 @@
 
     <div id="fingy-section" class="fingy">
       <!--  <img src="assets/fingy.png" alt="Decorative finger icon" loading="lazy"> -->
-        <div class="cas">
-            <img src="assets/cas.png" alt="Portfolio overview showcase" loading="lazy" ;">
-        </div>
+        
     </div>
 
     <section id="experience-section" class="value-section fade-section">
@@ -66,6 +66,27 @@
             being a DJ and producing. I have a background in science which I only use for fun facts and critical thinking.
             I love to go camping and enjoy lots of kinds of physical activities to stay healthy and happy.
         </p>
+
+         <div class="hero-carousel">
+    <div class="hero-carousel-track">
+        <img src="assets/dikke2.png" alt="">
+        <img src="assets/tyla.png" alt="">
+        <img src="assets/zara.png" alt="">
+        <img src="assets/badb.png" alt="">
+        <img src="assets/celebri1.jpg" alt="">
+        <img src="assets/celebri2.jpg" alt="">
+        <img src="assets/stylo1.png" alt="">
+        <img src="assets/tinyhouse9.png" alt="">
+        <img src="assets/thumb1.png" alt="">
+        <img src="assets/thumb3.png" alt="">
+        <img src="assets/Trypoul.png" alt="">
+        <img src="assets/tyl.png" alt="">
+        <img src="assets/stylo2.png" alt="">
+        <img src="assets/celebri2.jpg" alt="">
+        <img src="assets/Libre21_Menu_V1.jpg" alt="">
+        <img src="assets/IG Feed 45 — 1080×1350 — 1.jpg" alt="">
+    </div>
+</div>
 
     </section>
 
@@ -313,14 +334,34 @@
 </main>
 
 <script>
-    const cursorDot = document.querySelector('.cursor-dot');
+   const cursorDot = document.querySelector('.cursor-dot');
+const cursorDot2 = document.querySelector('.cursor-dot-2');
+const cursorDot3 = document.querySelector('.cursor-dot-3');
+
 let cursorX = 0, cursorY = 0;
+let trail2X = 0, trail2Y = 0;
+let trail3X = 0, trail3Y = 0;
 
 window.addEventListener('mousemove', (e) => {
     cursorX = e.clientX;
     cursorY = e.clientY;
     cursorDot.style.transform = `translate(${cursorX}px, ${cursorY}px) translate(-50%, -50%)`;
 });
+
+function animateTrail() {
+    // dot2 follows faster (less delay), dot3 follows slower (more delay)
+    trail2X += (cursorX - trail2X) * 0.18;
+    trail2Y += (cursorY - trail2Y) * 0.18;
+
+    trail3X += (cursorX - trail3X) * 0.09;
+    trail3Y += (cursorY - trail3Y) * 0.09;
+
+    cursorDot2.style.transform = `translate(${trail2X}px, ${trail2Y}px) translate(-50%, -50%)`;
+    cursorDot3.style.transform = `translate(${trail3X}px, ${trail3Y}px) translate(-50%, -50%)`;
+
+    requestAnimationFrame(animateTrail);
+}
+animateTrail();
 
 const hoverTargets = 'a, button, .filter-btn, .image-box, .play-btn, .copy-trigger, .close, input[type="submit"]';
 
@@ -339,9 +380,13 @@ document.addEventListener('mouseout', (e) => {
 // hide cursor when it leaves the window
 document.addEventListener('mouseleave', () => {
     cursorDot.style.opacity = '0';
+    cursorDot2.style.opacity = '0';
+    cursorDot3.style.opacity = '0';
 });
 document.addEventListener('mouseenter', () => {
     cursorDot.style.opacity = '1';
+    cursorDot2.style.opacity = '1';
+    cursorDot3.style.opacity = '1';
 });
 
 const canvas = document.getElementById('blob-canvas');
