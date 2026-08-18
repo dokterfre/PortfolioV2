@@ -2,7 +2,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
         }
 
         html {
@@ -18,47 +18,95 @@
             width: 100%;
 
         }
-
         nav {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 3rem 0.5rem;
-            width: 100%;
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 1000; 
-            transition: all 0.4s ease; 
-            background-color: transparent; 
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 2.5rem;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        transition: all 0.4s ease;
+        background: transparent;
+        }
+
+        nav::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background: linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0.541) 0%,
+            rgba(255, 255, 255, 0.151) 40%,
+            rgba(255, 255, 255, 0) 100%
+        );
+        backdrop-filter: blur(9px);
+        -webkit-mask-image: linear-gradient(to bottom, black 0%, black 60%, transparent 100%);
+        mask-image: linear-gradient(to bottom, black 0%, black 60%, transparent 100%);
+        }
+
+        .nav-logo {
+            font-family: 'Inter', sans-serif;
+            font-weight: 800;
+            font-size: 1.5rem;
+            letter-spacing: -0.5px;
+            color: #000;
+            text-decoration: none;
+        }
+
+        .nav-logo a{
+            color: #000;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .nav-logo a i{
+            transition: color 0.3s ease;
+            background: linear-gradient(
+        to right,
+        #ff1ce8 50%,
+        #000 50%
+        );
+        padding-right: 0.15em;
+        background-size: 200% 100%;
+        background-position: 100% 0;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+        transition: background-position 0.4s ease;
         }
 
         nav ul {
             display: flex;
             list-style: none;
-            gap: 4rem;
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
+            gap: 2.6rem;
         }
-        
+
         nav ul li a {
             color: #000;
             text-decoration: none;
-            font-family: "Archivo Condensed", sans-serif;
-            font-weight: 700;
-            font-size: 12pt;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: -1.2px;
+            text-transform: none; 
             transition: color 0.3s ease;
-            position: relative;
         }
 
         nav ul li a:hover {
             color: #ff1ce8;
             text-shadow: 0 0 12px rgb(252, 194, 239);
         }
+        .nav-logo a:hover i {
+        color: #ff1ce8;
+        text-shadow: 0 0 12px rgb(252, 194, 239);
+        background-position: 0% 0;
+        }
 
+        /*
         nav ul li a::after {
             content: '';
             position: absolute;
@@ -69,18 +117,12 @@
             background-color: #ff82ea;
             transition: width 0.3s;
         }
+            */
 
         nav ul li a:hover::after {
             width: 100%;
         }
 
-        nav.scrolled {
-            background-color: rgba(255, 255, 255, 0.733);
-            padding: 1.5rem 2rem 3rem 2rem;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.116);
-            backdrop-filter: blur(9px);
-            border-radius: 0 0 10px 10px;
-        }
 
         .hero-split {
             display: flex;
@@ -132,7 +174,7 @@
         }
 
         .hero-right h1 {
-            font-family: "Archivo Condensed", sans-serif;
+            font-family: "Inter", sans-serif;
             font-size: clamp(2.5rem, 6vw, 5.5rem);
             line-height: 0.85;
             font-weight: 900;
