@@ -27,7 +27,7 @@
             <div class="nav-logo"><a href="#">FREDERIC<i>STEEGMANS </i></a></div>
             <div class="nav-center">
                 <ul>
-                    <li><a href="#fingy-section">Experience</a></li>
+                    <li><a href="#experience">Experience</a></li>
                     <li><a href="#works-section">Works</a></li>
                     <li><a href="#audio-section">Audio</a></li>
                     <li><a href="assets/pdf/CV - A4.pdf" target="_blank">Resume</a></li>
@@ -43,7 +43,10 @@
             </div>
         </div>
 
-        <div id="fingy-section" class="fingy"></div>
+
+        <div id="experience" class="value-image-wrap">
+            <img src="assets/blucd.png" alt="Portfolio overview showcase" loading="lazy">
+        </div>
 
         <section id="experience-section" class="value-section fade-section">
             <h2 class="value-title">What do you get?</h2>
@@ -60,9 +63,7 @@
             </p>
         </section>
 
-        <div class="value-image-wrap">
-            <img src="assets/blucd.png" alt="Portfolio overview showcase" loading="lazy">
-        </div>
+    
 
         <div class="works-wrapper">
             <div class="works-sticky-header">
@@ -470,15 +471,42 @@
             });
         }, { rootMargin: '100px' });
 
+        let lastOpenedElement = null;
+
+        function flipFrom(startRect, contentEl) {
+            const endRect = contentEl.getBoundingClientRect();
+
+            const scaleX = startRect.width / endRect.width;
+            const scaleY = startRect.height / endRect.height;
+            const translateX = (startRect.left + startRect.width / 2) - (endRect.left + endRect.width / 2);
+            const translateY = (startRect.top + startRect.height / 2) - (endRect.top + endRect.height / 2);
+
+            contentEl.style.transition = 'none';
+            contentEl.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scaleX}, ${scaleY})`;
+            contentEl.style.visibility = 'visible';
+
+            contentEl.getBoundingClientRect();
+
+            requestAnimationFrame(() => {
+                contentEl.style.transition = '';
+                contentEl.style.transform = '';
+            });
+        }
+
         function openModal(element) {
             const modal = document.getElementById("lightboxModal");
             const modalImg = document.getElementById("lightboxImg");
             const modalVideo = document.getElementById("lightboxVideo");
 
+            lastOpenedElement = element;
+
             modalImg.style.display = "none";
             modalVideo.style.display = "none";
+            modalImg.style.visibility = "hidden";
+            modalVideo.style.visibility = "hidden";
 
             const videoSrc = element.getAttribute("data-video");
+            const startRect = element.getBoundingClientRect();
 
             if (videoSrc) {
                 modalVideo.pause();
@@ -486,27 +514,63 @@
                 modalVideo.src = videoSrc;
                 modalVideo.load();
                 modalVideo.style.display = "block";
-                modalVideo.play();
-            } else if (element.tagName === "IMG") {
-                modalImg.src = element.src;
-                modalImg.style.display = "block";
-            } else {
-                const style = window.getComputedStyle(element);
-                const imageSource = style.backgroundImage.slice(4, -1).replace(/"/g, "");
-                modalImg.src = imageSource;
-                modalImg.style.display = "block";
-            }
 
-            modal.style.display = "flex";
+                modal.classList.add("active");
+
+                modalVideo.addEventListener('loadedmetadata', function onReady() {
+                    modalVideo.removeEventListener('loadedmetadata', onReady);
+                    modalVideo.play();
+                    flipFrom(startRect, modalVideo);
+                }, { once: true });
+            } else {
+                if (element.tagName === "IMG") {
+                    modalImg.src = element.src;
+                } else {
+                    const style = window.getComputedStyle(element);
+                    const imageSource = style.backgroundImage.slice(4, -1).replace(/"/g, "");
+                    modalImg.src = imageSource;
+                }
+                modalImg.style.display = "block";
+
+                modal.classList.add("active");
+
+                if (modalImg.complete) {
+                    requestAnimationFrame(() => flipFrom(startRect, modalImg));
+                } else {
+                    modalImg.addEventListener('load', function onReady() {
+                        modalImg.removeEventListener('load', onReady);
+                        flipFrom(startRect, modalImg);
+                    }, { once: true });
+                }
+            }
         }
 
         function closeModal() {
             const modal = document.getElementById("lightboxModal");
+            const modalImg = document.getElementById("lightboxImg");
             const modalVideo = document.getElementById("lightboxVideo");
+            const contentEl = modalVideo.style.display === "block" ? modalVideo : modalImg;
 
-            modal.style.display = "none";
+            if (lastOpenedElement) {
+                const endRect = lastOpenedElement.getBoundingClientRect();
+                const startRect = contentEl.getBoundingClientRect();
+
+                const scaleX = endRect.width / startRect.width;
+                const scaleY = endRect.height / startRect.height;
+                const translateX = (endRect.left + endRect.width / 2) - (startRect.left + startRect.width / 2);
+                const translateY = (endRect.top + endRect.height / 2) - (startRect.top + startRect.height / 2);
+
+                contentEl.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scaleX}, ${scaleY})`;
+            }
+
+            modal.classList.remove("active");
             modalVideo.pause();
-            modalVideo.src = "";
+
+            setTimeout(() => {
+                modalVideo.src = "";
+                modalImg.style.transform = '';
+                modalVideo.style.transform = '';
+            }, 350);
         }
 
         document.addEventListener('keydown', function (event) {
